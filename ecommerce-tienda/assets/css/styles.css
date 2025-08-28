@@ -1,0 +1,16 @@
+
+html {
+  /* Evita salto horizontal al cambiar entre páginas con y sin scroll */
+  scrollbar-gutter: stable;
+  /* Fallback navegadores antiguos */
+  overflow-y: scroll;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}

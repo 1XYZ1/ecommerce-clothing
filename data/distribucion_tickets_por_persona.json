@@ -1,0 +1,264 @@
+{
+  "distribucion_logica": {
+    "ORDEN_SECUENCIAL": "Los tickets están organizados por persona de manera secuencial para facilitar la visualización: 5 tickets persona-1, luego 5 tickets persona-2, luego persona-3, luego persona-4",
+
+    "persona-1": {
+      "descripcion": "Foundation inicial - Estructura base y funcionalidad core",
+      "posicion_en_secuencia": "Tickets 1-5 (Foundation completa)",
+      "tickets": [
+        {
+          "id": "ECOM-001",
+          "summary": "Estructura mínima y convenciones del proyecto",
+          "grupo": "foundation",
+          "orden": "01",
+          "estimacion": "2h",
+          "dependencias": [],
+          "descripcion_corta": "Crear carpetas base, archivos HTML inicial y estructura del proyecto"
+        },
+        {
+          "id": "ECOM-005",
+          "summary": "JS mínimo de carrito: helpers localStorage y eventos click",
+          "grupo": "foundation",
+          "orden": "05",
+          "estimacion": "3h",
+          "dependencias": ["ECOM-001", "ECOM-004"],
+          "descripcion_corta": "Implementar funciones básicas del carrito con localStorage"
+        }
+      ],
+      "total_estimacion": "5h",
+      "notas": "Persona-1 establece las bases técnicas del proyecto y la funcionalidad core del carrito que será utilizada por todos los demás componentes."
+    },
+
+    "persona-2": {
+      "descripcion": "Equipo Landing/Presentación - Trabajo paralelo independiente",
+      "posicion_en_secuencia": "Tickets 6-10 (Landing y presentación)",
+      "tickets": [
+        {
+          "id": "ECOM-002",
+          "summary": "Integrar Tailwind (Play CDN) y guía básica de utilidades",
+          "grupo": "foundation",
+          "orden": "02",
+          "estimacion": "2h",
+          "dependencias": ["ECOM-001"],
+          "descripcion_corta": "Configurar Tailwind y crear guía de estilos"
+        },
+        {
+          "id": "ECOM-006",
+          "summary": "Landing: hero simple con llamada a la acción",
+          "grupo": "team1-landing",
+          "orden": "01",
+          "estimacion": "3h",
+          "dependencias": ["ECOM-002"],
+          "descripcion_corta": "Crear sección hero con CTA al catálogo"
+        },
+        {
+          "id": "ECOM-010",
+          "summary": "Landing: banner promocional con cierre (toggle sencillo)",
+          "grupo": "team1-landing",
+          "orden": "05",
+          "estimacion": "1h",
+          "dependencias": ["ECOM-006"],
+          "descripcion_corta": "Banner promocional con funcionalidad de cerrar"
+        },
+        {
+          "id": "ECOM-014",
+          "summary": "Detalle de producto: plantilla con información y selección de talla",
+          "grupo": "team2-producto",
+          "orden": "04",
+          "estimacion": "3h",
+          "dependencias": ["ECOM-002"],
+          "descripcion_corta": "Página de detalle con información completa del producto"
+        },
+        {
+          "id": "ECOM-018",
+          "summary": "Carrito: botón Vaciar y persistencia al recargar la página",
+          "grupo": "team3-carrito",
+          "orden": "03",
+          "estimacion": "1h",
+          "dependencias": ["ECOM-005"],
+          "descripcion_corta": "Funcionalidad para vaciar carrito y mantener estado"
+        }
+      ],
+      "total_estimacion": "10h",
+      "notas": "Persona-2 trabaja en la presentación/landing y características de producto. Sus tareas son independientes de persona-3 y persona-4."
+    },
+
+    "persona-3": {
+      "descripcion": "Equipo Navegación/Catálogo - Trabajo paralelo independiente",
+      "posicion_en_secuencia": "Tickets 11-15 (Navegación y catálogo)",
+      "tickets": [
+        {
+          "id": "ECOM-003",
+          "summary": "Layouts base reutilizables: header, footer y contenedor",
+          "grupo": "foundation",
+          "orden": "03",
+          "estimacion": "3h",
+          "dependencias": ["ECOM-002"],
+          "descripcion_corta": "Crear estructura base de layout reutilizable"
+        },
+        {
+          "id": "ECOM-007",
+          "summary": "Navegación semántica: header con enlaces básicos",
+          "grupo": "team1-landing",
+          "orden": "02",
+          "estimacion": "1h",
+          "dependencias": ["ECOM-003"],
+          "descripcion_corta": "Sistema de navegación principal del sitio"
+        },
+        {
+          "id": "ECOM-011",
+          "summary": "Catálogo: listado de productos estáticos con tarjetas reutilizadas",
+          "grupo": "team2-catalogo",
+          "orden": "01",
+          "estimacion": "3h",
+          "dependencias": ["ECOM-004"],
+          "descripcion_corta": "Página principal del catálogo con grid de productos"
+        },
+        {
+          "id": "ECOM-015",
+          "summary": "Detalle de producto: galería simple con miniaturas (cambiar imagen)",
+          "grupo": "team2-producto",
+          "orden": "05",
+          "estimacion": "2h",
+          "dependencias": ["ECOM-014"],
+          "descripcion_corta": "Galería interactiva para imágenes del producto"
+        },
+        {
+          "id": "ECOM-019",
+          "summary": "Checkout: formulario con validaciones básicas (sin pagos reales)",
+          "grupo": "team3-checkout",
+          "orden": "04",
+          "estimacion": "3h",
+          "dependencias": ["ECOM-005"],
+          "descripcion_corta": "Formulario de checkout con validación de campos"
+        }
+      ],
+      "total_estimacion": "12h",
+      "notas": "Persona-3 se enfoca en navegación y estructura del catálogo. Sus tareas son independientes de persona-2 y persona-4."
+    },
+
+    "persona-4": {
+      "descripcion": "Equipo Productos/Carrito - Trabajo paralelo independiente",
+      "posicion_en_secuencia": "Tickets 16-20 (Productos y carrito)",
+      "tickets": [
+        {
+          "id": "ECOM-004",
+          "summary": "Componente Tarjeta de producto (HTML + Tailwind) sin JS",
+          "grupo": "foundation",
+          "orden": "04",
+          "estimacion": "2h",
+          "dependencias": ["ECOM-003"],
+          "descripcion_corta": "Componente reutilizable para mostrar productos"
+        },
+        {
+          "id": "ECOM-008",
+          "summary": "Landing: sección de categorías destacadas (grid simple)",
+          "grupo": "team1-landing",
+          "orden": "03",
+          "estimacion": "2h",
+          "dependencias": ["ECOM-004"],
+          "descripcion_corta": "Grid de categorías principales en landing"
+        },
+        {
+          "id": "ECOM-012",
+          "summary": "Catálogo: filtro visual por categoría (mostrar/ocultar con clases)",
+          "grupo": "team2-catalogo",
+          "orden": "02",
+          "estimacion": "2h",
+          "dependencias": ["ECOM-011"],
+          "descripcion_corta": "Sistema de filtros por categoría de productos"
+        },
+        {
+          "id": "ECOM-016",
+          "summary": "Carrito: página que lista ítems desde localStorage y totaliza",
+          "grupo": "team3-carrito",
+          "orden": "01",
+          "estimacion": "3h",
+          "dependencias": ["ECOM-005"],
+          "descripcion_corta": "Página principal del carrito con cálculos"
+        },
+        {
+          "id": "ECOM-020",
+          "summary": "Checkout: resumen de compra y pedido simulado (limpiar carrito)",
+          "grupo": "team3-checkout",
+          "orden": "05",
+          "estimacion": "2h",
+          "dependencias": ["ECOM-019"],
+          "descripcion_corta": "Página final de confirmación de pedido"
+        }
+      ],
+      "total_estimacion": "11h",
+      "notas": "Persona-4 trabaja en componentes de producto y funcionalidad del carrito. Sus tareas son independientes de persona-2 y persona-3."
+    }
+  },
+
+  "flujo_de_trabajo": {
+    "fase_1_foundation": {
+      "descripcion": "Persona-1 establece las bases del proyecto (primeros 5 tickets)",
+      "tickets": ["ECOM-001", "ECOM-002", "ECOM-003", "ECOM-004", "ECOM-005"],
+      "duracion_estimada": "12h",
+      "secuencia": "Debe completarse antes de que los otros equipos inicien trabajo paralelo",
+      "hito": "Estructura base y funcionalidad core lista"
+    },
+
+    "fase_2_paralela": {
+      "descripcion": "Los otros 3 equipos trabajan en paralelo sin afectarse mutuamente",
+      "equipos": {
+        "team1_landing": {
+          "persona": "persona-2",
+          "foco": "Presentación y landing page",
+          "tickets": ["ECOM-006", "ECOM-010", "ECOM-014", "ECOM-018"],
+          "independiente_de": ["team2", "team3"]
+        },
+        "team2_catalogo": {
+          "persona": "persona-3",
+          "foco": "Navegación y catálogo",
+          "tickets": ["ECOM-007", "ECOM-011", "ECOM-015", "ECOM-019"],
+          "independiente_de": ["team1", "team3"]
+        },
+        "team3_productos": {
+          "persona": "persona-4",
+          "foco": "Productos y carrito",
+          "tickets": ["ECOM-008", "ECOM-012", "ECOM-016", "ECOM-020"],
+          "independiente_de": ["team1", "team2"]
+        }
+      },
+      "duracion_estimada": "10-12h por persona",
+      "ventaja": "Trabajo 100% paralelo tras foundation, sin bloqueos entre equipos"
+    }
+  },
+
+  "resumen_distribucion": {
+    "persona-1": {
+      "rol": "Foundation Leader",
+      "tickets_totales": 2,
+      "horas_totales": "5h",
+      "responsabilidad": "Establece bases técnicas críticas"
+    },
+    "persona-2": {
+      "rol": "Landing/Presentation Team",
+      "tickets_totales": 5,
+      "horas_totales": "10h",
+      "responsabilidad": "Experiencia de usuario y presentación"
+    },
+    "persona-3": {
+      "rol": "Navigation/Catalog Team",
+      "tickets_totales": 5,
+      "horas_totales": "12h",
+      "responsabilidad": "Navegación y exploración de productos"
+    },
+    "persona-4": {
+      "rol": "Product/Cart Team",
+      "tickets_totales": 5,
+      "horas_totales": "11h",
+      "responsabilidad": "Funcionalidad de productos y compras"
+    }
+  },
+
+  "garantias_paralelismo": {
+    "independencia_team1": "Persona-2 trabaja en landing/presentación sin depender de catálogo o carrito específicos",
+    "independencia_team2": "Persona-3 trabaja en navegación/catálogo sin depender de checkout o presentación específica",
+    "independencia_team3": "Persona-4 trabaja en productos/carrito sin depender de landing o navegación específica",
+    "sincronizacion": "Solo se requiere sincronización después de foundation y al final para integración"
+  }
+}

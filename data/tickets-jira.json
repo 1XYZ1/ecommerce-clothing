@@ -1,0 +1,2056 @@
+{
+  "issueUpdates": [
+    {
+      "fields": {
+        "project": { "key": "ECOM" },
+        "issuetype": { "name": "Task" },
+        "summary": "Inicializar repositorio con README y licencia",
+        "description": {
+          "type": "doc",
+          "version": 1,
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Objetivo: Crear un nuevo repositorio Git con rama main, .gitignore, README y licencia MIT."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "text": "Criterios de aceptación:" }
+              ]
+            },
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Rama main creada y .gitignore estándar para Node/Tailwind añadido."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "README con pasos para instalar, ejecutar y construir el proyecto."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Archivo LICENSE (MIT) en la raíz."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "labels": ["epic:setup", "repo", "setup"]
+      }
+    },
+    {
+      "fields": {
+        "project": { "key": "ECOM" },
+        "issuetype": { "name": "Task" },
+        "summary": "Instalar y configurar Tailwind via npm y PostCSS",
+        "description": {
+          "type": "doc",
+          "version": 1,
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Objetivo: Integrar Tailwind CSS usando npm y PostCSS y generar CSS compilado para el proyecto."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "text": "Criterios de aceptación:" }
+              ]
+            },
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Existen archivos tailwind.config.js y postcss.config.js configurados."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Script de build compila el CSS sin errores."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Página de prueba muestra utilidades de Tailwind aplicadas."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "labels": ["epic:setup", "tailwind", "build"]
+      }
+    },
+    {
+      "fields": {
+        "project": { "key": "ECOM" },
+        "issuetype": { "name": "Task" },
+        "summary": "Agregar utilidades base de Tailwind y breakpoints responsivos",
+        "description": {
+          "type": "doc",
+          "version": 1,
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Objetivo: Incluir @tailwind base, components y utilities; definir container y puntos de quiebre sm/md/lg/xl."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "text": "Criterios de aceptación:" }
+              ]
+            },
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "CSS global importa @tailwind base, components y utilities."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Container y breakpoints verificados en una página demo."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Tipografía base y estados de foco visibles aplicados."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "labels": ["epic:setup", "tailwind", "responsive"]
+      }
+    },
+    {
+      "fields": {
+        "project": { "key": "ECOM" },
+        "issuetype": { "name": "Task" },
+        "summary": "Crear esqueleto HTML con header, main y footer",
+        "description": {
+          "type": "doc",
+          "version": 1,
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Objetivo: Añadir index.html con regiones semánticas y enlazar CSS de Tailwind compilado y main.js."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "text": "Criterios de aceptación:" }
+              ]
+            },
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "index.html contiene etiquetas header, main y footer."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Tailwind CSS se carga y aplica estilos sin errores."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "main.js se carga sin errores en consola."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "labels": ["epic:layout", "html", "layout"]
+      }
+    },
+    {
+      "fields": {
+        "project": { "key": "ECOM" },
+        "issuetype": { "name": "Story" },
+        "summary": "Construir header con logo y navegación (Tailwind)",
+        "description": {
+          "type": "doc",
+          "version": 1,
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Como usuario quiero un encabezado con logo y navegación para moverme por el sitio. Estilos con Tailwind."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "text": "Criterios de aceptación:" }
+              ]
+            },
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "El header muestra logo y enlaces de navegación."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Los enlaces navegan a secciones o páginas válidas."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "En móvil el menú se apila o colapsa correctamente."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "labels": ["epic:layout", "tailwind", "nav"]
+      }
+    },
+    {
+      "fields": {
+        "project": { "key": "ECOM" },
+        "issuetype": { "name": "Task" },
+        "summary": "Construir footer con enlaces y copyright (Tailwind)",
+        "description": {
+          "type": "doc",
+          "version": 1,
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Objetivo: Añadir un pie de página con copyright y enlaces a políticas. Estilos con Tailwind."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "text": "Criterios de aceptación:" }
+              ]
+            },
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "El footer es visible al final del contenido."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Los enlaces llevan a páginas o anclas de política."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "El contraste es legible según buenas prácticas."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "labels": ["epic:layout", "tailwind", "footer"]
+      }
+    },
+    {
+      "fields": {
+        "project": { "key": "ECOM" },
+        "issuetype": { "name": "Task" },
+        "summary": "Crear products.json con 12 artículos de ejemplo",
+        "description": {
+          "type": "doc",
+          "version": 1,
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Objetivo: Generar products.json con id, nombre, precio, imagen, categoría y descripción para 12 productos."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "text": "Criterios de aceptación:" }
+              ]
+            },
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "El archivo contiene 12 ítems con los campos requeridos."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "El JSON carga sin errores de sintaxis."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Los precios se almacenan como números."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "labels": ["epic:catalogo", "data", "catalogo"]
+      }
+    },
+    {
+      "fields": {
+        "project": { "key": "ECOM" },
+        "issuetype": { "name": "Story" },
+        "summary": "Construir grilla de catálogo con Tailwind desde products.json",
+        "description": {
+          "type": "doc",
+          "version": 1,
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Como usuario quiero ver un listado de productos en tarjetas responsivas generadas desde products.json. Estilos con Tailwind."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "text": "Criterios de aceptación:" }
+              ]
+            },
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "La grilla muestra los ítems de products.json con imagen, nombre y precio."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "2 columnas en móvil; 3–4 columnas en escritorio."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Al hacer clic en la tarjeta se navega al detalle del producto."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "labels": ["epic:catalogo", "tailwind", "js"]
+      }
+    },
+    {
+      "fields": {
+        "project": { "key": "ECOM" },
+        "issuetype": { "name": "Task" },
+        "summary": "Agregar búsqueda y filtro por categoría en el catálogo (cliente)",
+        "description": {
+          "type": "doc",
+          "version": 1,
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Objetivo: Implementar input de búsqueda y selector de categoría para filtrar productos en el cliente."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "text": "Criterios de aceptación:" }
+              ]
+            },
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Escribir en el buscador filtra por nombre en tiempo real."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "El selector de categoría reduce los resultados correctamente."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Acción de limpiar restablece los filtros."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "labels": ["epic:catalogo", "filtrado", "cliente"]
+      }
+    },
+    {
+      "fields": {
+        "project": { "key": "ECOM" },
+        "issuetype": { "name": "Task" },
+        "summary": "Crear plantilla de detalle de producto (product.html)",
+        "description": {
+          "type": "doc",
+          "version": 1,
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Objetivo: Añadir product.html con secciones para título, precio, galería, descripción y botón agregar al carro. Estilos con Tailwind."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "text": "Criterios de aceptación:" }
+              ]
+            },
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "La plantilla muestra placeholders para todos los campos."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Existe botón \"Agregar al carrito\" visible y habilitado."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Enlace claro para volver al catálogo."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "labels": ["epic:detalle", "html", "tailwind"]
+      }
+    },
+    {
+      "fields": {
+        "project": { "key": "ECOM" },
+        "issuetype": { "name": "Story" },
+        "summary": "Cargar detalle por parámetro de URL desde products.json",
+        "description": {
+          "type": "doc",
+          "version": 1,
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Como usuario quiero ver el detalle del producto al visitar product.html?id=<id> cargando datos desde products.json."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "text": "Criterios de aceptación:" }
+              ]
+            },
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Con id válido se muestran los datos correctos del producto."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Con id inválido se muestra mensaje/estado de error claro."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "No hay errores en consola al cargar."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "labels": ["epic:detalle", "js", "catalogo"]
+      }
+    },
+    {
+      "fields": {
+        "project": { "key": "ECOM" },
+        "issuetype": { "name": "Task" },
+        "summary": "Añadir galería de imágenes y enlace de regreso al catálogo",
+        "description": {
+          "type": "doc",
+          "version": 1,
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Objetivo: Mostrar imagen principal con miniaturas y proveer enlace de retorno al catálogo. Estilos con Tailwind."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "text": "Criterios de aceptación:" }
+              ]
+            },
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Al hacer clic en miniatura se actualiza la imagen principal."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "El enlace de regreso lleva al listado de catálogo."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Las imágenes son responsivas y no se deforman."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "labels": ["epic:detalle", "tailwind", "ux"]
+      }
+    },
+    {
+      "fields": {
+        "project": { "key": "ECOM" },
+        "issuetype": { "name": "Story" },
+        "summary": "Implementar estado de carrito con localStorage (agregar/quitar/actualizar)",
+        "description": {
+          "type": "doc",
+          "version": 1,
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Como usuario quiero administrar el carrito en el cliente con persistencia en localStorage para agregar, quitar y actualizar cantidades."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "text": "Criterios de aceptación:" }
+              ]
+            },
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Los ítems persisten tras recargar la página."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Actualizar cantidad recalcula subtotales y total."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Quitar un ítem actualiza almacenamiento y UI."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "labels": ["epic:carrito", "js", "localstorage"]
+      }
+    },
+    {
+      "fields": {
+        "project": { "key": "ECOM" },
+        "issuetype": { "name": "Story" },
+        "summary": "Renderizar página del carrito con totales y estado vacío",
+        "description": {
+          "type": "doc",
+          "version": 1,
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Como usuario quiero ver los ítems del carrito, subtotales y un estado vacío claro cuando no hay productos. Estilos con Tailwind."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "text": "Criterios de aceptación:" }
+              ]
+            },
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Se muestran nombre, precio, cantidad y subtotal por línea."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Se muestra mensaje/ilustración de carrito vacío cuando no hay ítems."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Los totales se actualizan tras cambiar cantidades."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "labels": ["epic:carrito", "tailwind", "ui"]
+      }
+    },
+    {
+      "fields": {
+        "project": { "key": "ECOM" },
+        "issuetype": { "name": "Task" },
+        "summary": "Mostrar badge de cantidad de carrito en el header",
+        "description": {
+          "type": "doc",
+          "version": 1,
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Objetivo: Mostrar en el header un contador de ítems del carrito sincronizado con el estado. Estilos con Tailwind."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "text": "Criterios de aceptación:" }
+              ]
+            },
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "El badge refleja el conteo tras agregar/quitar ítems."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "El badge es visible en todas las páginas."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Actualización sin retrasos perceptibles."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "labels": ["epic:carrito", "layout", "header"]
+      }
+    },
+    {
+      "fields": {
+        "project": { "key": "ECOM" },
+        "issuetype": { "name": "Story" },
+        "summary": "Construir formulario de checkout (nombre, email, dirección) con Tailwind",
+        "description": {
+          "type": "doc",
+          "version": 1,
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Como usuario quiero un formulario de checkout básico con campos de contacto y envío. Estilos con Tailwind."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "text": "Criterios de aceptación:" }
+              ]
+            },
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Incluye campos: nombre, email y dirección."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Etiquetas claras y estilos de Tailwind aplicados."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Botón Continuar solo habilitado con campos requeridos completos."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "labels": ["epic:checkout", "tailwind", "formulario"]
+      }
+    },
+    {
+      "fields": {
+        "project": { "key": "ECOM" },
+        "issuetype": { "name": "Task" },
+        "summary": "Validación en cliente e indicadores de error en checkout",
+        "description": {
+          "type": "doc",
+          "version": 1,
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Objetivo: Implementar validación requerida y formato de email con mensajes de error en línea. Estilos con Tailwind."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "text": "Criterios de aceptación:" }
+              ]
+            },
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Email inválido muestra error en línea y descripción accesible."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Campos requeridos muestran errores al enviar si están vacíos."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Los errores desaparecen al corregir los campos."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "labels": ["epic:checkout", "validacion", "cliente"]
+      }
+    },
+    {
+      "fields": {
+        "project": { "key": "ECOM" },
+        "issuetype": { "name": "Task" },
+        "summary": "Página de revisión y envío con pantalla de éxito (stub)",
+        "description": {
+          "type": "doc",
+          "version": 1,
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Objetivo: Mostrar resumen de ítems, totales y datos de envío; al enviar, mostrar pantalla de éxito sin integrar pagos ni backend."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "text": "Criterios de aceptación:" }
+              ]
+            },
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "La página de revisión lista ítems y totales correctamente."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Al enviar se muestra pantalla de éxito (sin peticiones de red)."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Ningún request externo es disparado."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "labels": ["epic:checkout", "stub", "ui"]
+      }
+    },
+    {
+      "fields": {
+        "project": { "key": "ECOM" },
+        "issuetype": { "name": "Task" },
+        "summary": "Ajustes de layout móvil con utilidades responsivas de Tailwind",
+        "description": {
+          "type": "doc",
+          "version": 1,
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Objetivo: Auditar vistas para móvil y aplicar clases sm/* etc. para espaciados, grillas y tipografías."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "text": "Criterios de aceptación:" }
+              ]
+            },
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Header, catálogo, detalle, carrito se adaptan a 360px de ancho sin overflow horizontal."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Targets táctiles cumplen ~44px mínimo."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "No existe desplazamiento horizontal en ninguna vista."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "labels": ["epic:responsive", "tailwind", "mobile"]
+      }
+    },
+    {
+      "fields": {
+        "project": { "key": "ECOM" },
+        "issuetype": { "name": "Task" },
+        "summary": "Ajustes de layout de escritorio y anchos de contenedor",
+        "description": {
+          "type": "doc",
+          "version": 1,
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Objetivo: Ajustar grillas y contenedores en lg/xl para densidad y legibilidad en escritorio. Estilos con Tailwind."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "text": "Criterios de aceptación:" }
+              ]
+            },
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Catálogo usa 3–4 columnas en escritorio según ancho."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Detalle mantiene longitud de línea legible (~60–80 caracteres)."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "No hay saltos/brincos de layout visibles entre breakpoints."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "labels": ["epic:responsive", "layout", "desktop"]
+      }
+    },
+    {
+      "fields": {
+        "project": { "key": "ECOM" },
+        "issuetype": { "name": "Task" },
+        "summary": "Smoke test cruzado (Chrome/Firefox/Safari y móvil)",
+        "description": {
+          "type": "doc",
+          "version": 1,
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Objetivo: Ejecutar pruebas manuales de carga y navegación en navegadores objetivos y documentar hallazgos."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "text": "Criterios de aceptación:" }
+              ]
+            },
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Catálogo, detalle, carrito y checkout cargan sin errores."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Sin rupturas críticas de layout en navegadores objetivo."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Issues documentados con pasos para reproducir."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "labels": ["epic:responsive", "testing", "browsers"]
+      }
+    },
+    {
+      "fields": {
+        "project": { "key": "ECOM" },
+        "issuetype": { "name": "Task" },
+        "summary": "Accesibilidad básica: landmarks, aria-labels y foco visible",
+        "description": {
+          "type": "doc",
+          "version": 1,
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Objetivo: Asegurar HTML semántico, nombres accesibles y anillos de foco visibles. Estilos con Tailwind donde aplique."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "text": "Criterios de aceptación:" }
+              ]
+            },
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Header, main y footer definidos como landmarks correctos."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Controles interactivos tienen nombres discernibles (aria-label, texto)."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "El foco de teclado es visible en todos los controles."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "labels": ["epic:accesibilidad", "a11y", "tailwind"]
+      }
+    },
+    {
+      "fields": {
+        "project": { "key": "ECOM" },
+        "issuetype": { "name": "Task" },
+        "summary": "Habilitar navegación por teclado y enlaces de salto (skip link)",
+        "description": {
+          "type": "doc",
+          "version": 1,
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Objetivo: Añadir enlace para saltar al contenido y revisar orden de tabulación en vistas clave."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "text": "Criterios de aceptación:" }
+              ]
+            },
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "El skip link aparece al enfocar y lleva correctamente al main."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "La navegación con Tab recorre controles en orden lógico."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Enter/Espacio activan botones y enlaces."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "labels": ["epic:accesibilidad", "a11y", "teclado"]
+      }
+    },
+    {
+      "fields": {
+        "project": { "key": "ECOM" },
+        "issuetype": { "name": "Task" },
+        "summary": "Pruebas ligeras para totales del carrito y utilidades JS",
+        "description": {
+          "type": "doc",
+          "version": 1,
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Objetivo: Crear pruebas simples en JS para cálculos de subtotales y totales del carrito (sin framework pesado)."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "text": "Criterios de aceptación:" }
+              ]
+            },
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Cobertura de subtotal y total considerando cambios de cantidad."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Todas las pruebas pasan en entorno local."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "README documenta cómo ejecutar las pruebas."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "labels": ["epic:accesibilidad", "testing", "carrito"]
+      }
+    },
+    {
+      "fields": {
+        "project": { "key": "ECOM" },
+        "issuetype": { "name": "Task" },
+        "summary": "Activar purge de contenido en Tailwind y minificar assets",
+        "description": {
+          "type": "doc",
+          "version": 1,
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Objetivo: Configurar paths de contenido en Tailwind y minificar CSS para producción."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "text": "Criterios de aceptación:" }
+              ]
+            },
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "El CSS de producción reduce tamaño por purge sin romper estilos."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "El script de build produce CSS minificado."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "No hay estilos faltantes en el build de producción."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "labels": ["epic:deploy", "tailwind", "build"]
+      }
+    },
+    {
+      "fields": {
+        "project": { "key": "ECOM" },
+        "issuetype": { "name": "Task" },
+        "summary": "Generar build estático y guías de despliegue (Netlify/Vercel/GitHub Pages)",
+        "description": {
+          "type": "doc",
+          "version": 1,
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Objetivo: Crear carpeta /dist con assets estáticos y documentar despliegue en al menos un hosting estático."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "text": "Criterios de aceptación:" }
+              ]
+            },
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Se genera carpeta dist con HTML/CSS/JS listos para servir."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "README incluye pasos detallados de despliegue."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Vista local de dist funciona sin errores."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "labels": ["epic:deploy", "docs", "dist"]
+      }
+    },
+    {
+      "fields": {
+        "project": { "key": "ECOM" },
+        "issuetype": { "name": "Task" },
+        "summary": "Añadir flujo simple de CI para build y lint en pushes y PRs",
+        "description": {
+          "type": "doc",
+          "version": 1,
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Objetivo: Configurar workflow de CI que ejecute build y una verificación básica de lint/formato en cada push/PR."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "text": "Criterios de aceptación:" }
+              ]
+            },
+            {
+              "type": "bulletList",
+              "content": [
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "CI se ejecuta en push y pull request en la rama principal."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "El job de build pasa en main sin errores."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "type": "text",
+                          "text": "Paso de lint/formato reporta estado correctamente."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "labels": ["epic:deploy", "ci", "build"]
+      }
+    }
+  ]
+}

@@ -1,220 +1,401 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <!-- meta: configuración básica de caracteres y responsive -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Tailwind CDN para usar utilidades sin build -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Tienda - Inicio</title>
   </head>
-    <title>eCommerce Básico - Ropa</title>
-</head>
-<body class="bg-gray-100 text-gray-800 font-sans">
-    <!-- HEADER: área superior fija con logo y navegación -->
-    <header class="bg-white shadow sticky top-0 z-50">
-        <!-- container: centra contenido / mx-auto: auto márgenes horizontales / flex: distribución -->
-        <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-            <!-- LOGO: usa <a> para volver al inicio -->
-            <a href="#inicio" class="text-2xl font-bold tracking-tight">
-                <!-- span separado permite estilizar parte del texto -->
-                <span class="text-blue-600">Mi</span>Tienda
-            </a>
+  <body class="bg-gray-50 text-gray-900 min-h-screen flex flex-col">
+    <!-- HEADER SECTION -->
+    <header class="bg-white shadow-sm border-b sticky top-0 z-50">
+      <div class="container mx-auto px-4">
+        <nav class="flex items-center justify-between py-4">
+          <!-- Logo/Brand -->
+          <div class="flex items-center">
+            <h1 class="text-2xl font-bold text-blue-600">
+              <a
+                href="index.html"
+                class="hover:text-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded"
+                aria-current="page"
+              >
+                MiTienda
+              </a>
+            </h1>
+          </div>
 
-            <!-- MENÚ PRINCIPAL: oculto en móvil (hidden) visible md: (md:flex) -->
-            <ul class="hidden md:flex gap-6 text-sm">
-                <!-- li + a: elementos de navegación -->
-                <li><a href="#inicio" class="hover:text-blue-600">Inicio</a></li>
-                <li><a href="#hombre" class="hover:text-blue-600">Hombre</a></li>
-                <li><a href="#mujer" class="hover:text-blue-600">Mujer</a></li>
-                <li><a href="#ninos" class="hover:text-blue-600">Niños</a></li>
-            </ul>
+          <!-- Navigation Menu -->
+          <ul class="hidden md:flex items-center space-x-8" role="menubar">
+            <li role="none">
+              <a
+                href="index.html"
+                class="text-blue-600 font-medium hover:text-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded px-2 py-1"
+                role="menuitem"
+                aria-current="page"
+              >
+                Inicio
+              </a>
+            </li>
+            <li role="none">
+              <a
+                href="pages/catalogo.html"
+                class="text-gray-700 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded px-2 py-1"
+                role="menuitem"
+              >
+                Catálogo
+              </a>
+            </li>
+            <li role="none">
+              <a
+                href="pages/carrito.html"
+                class="text-gray-700 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded px-2 py-1 relative"
+                role="menuitem"
+              >
+                Carrito
+                <span
+                  id="cart-counter"
+                  class="absolute -top-2 -right-2 min-w-5 h-5 flex items-center justify-center text-xs font-semibold bg-gray-300 text-gray-600 rounded-full px-1 text-sm md:text-base transition-colors"
+                >
+                  0
+                </span>
+              </a>
+            </li>
+            <li role="none">
+              <a
+                href="pages/checkout.html"
+                class="text-gray-700 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded px-2 py-1"
+                role="menuitem"
+              >
+                Checkout
+              </a>
+            </li>
+          </ul>
 
-            <!-- ICONOS (solo ejemplo visual simple) -->
-            <div class="flex items-center gap-4">
-                <!-- Botón buscar (sin funcionalidad aún) -->
-                <button aria-label="Buscar" class="p-2 rounded hover:bg-gray-100">
-                    <!-- SVG: icono lupa -->
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2"
-                         viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    </svg>
-                </button>
-                <!-- Carrito (placeholder) -->
-                <button aria-label="Carrito" class="p-2 rounded hover:bg-gray-100 relative">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2"
-                         viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="9" cy="21" r="1"></circle>
-                        <circle cx="20" cy="21" r="1"></circle>
-                        <path d="M1 1h4l2.8 9.4a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 2-1.6L23 6H6"></path>
-                    </svg>
-                    <!-- Badge cantidad (ejemplo) -->
-                    <span class="absolute -top-1 -right-1 bg-blue-600 text-white text-[10px] px-1 rounded">0</span>
-                </button>
-            </div>
+          <!-- Mobile Menu Button -->
+          <button
+            class="md:hidden p-2 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            aria-label="Abrir menú de navegación"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
         </nav>
+      </div>
     </header>
 
-    <!-- MAIN: contenido central de la página -->
-    <main id="inicio" class="max-w-6xl mx-auto px-4 py-10 space-y-16">
+    <!-- MAIN CONTENT -->
+    <main class="container mx-auto px-4 py-8 flex-1">
+      <!-- Hero Section -->
+      <section class="bg-white rounded-lg shadow-sm border p-8 mb-8">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            Bienvenido a MiTienda
+          </h2>
+          <p class="text-lg text-gray-600 mb-6">
+            Encuentra la mejor ropa y accesorios para toda la familia
+          </p>
+          <div class="space-x-4">
+            <a
+              href="pages/catalogo.html"
+              class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 inline-block"
+            >
+              Ver Catálogo
+            </a>
+            <a
+              href="pages/carrito.html"
+              class="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 inline-block"
+            >
+              Ver Carrito
+            </a>
+          </div>
+        </div>
+      </section>
 
-        <!-- HERO / PORTADA -->
-        <section class="grid md:grid-cols-2 gap-10 items-center">
-            <!-- Texto principal -->
-            <div class="space-y-5">
-                <h1 class="text-3xl md:text-4xl font-bold leading-tight">
-                    Ropa cómoda y moderna para todos
-                </h1>
-                <p class="text-gray-600">
-                    Este es un ejemplo básico de una tienda con Tailwind. Observa las clases y los comentarios para aprender.
-                </p>
-                <!-- Botones de acción -->
-                <div class="flex gap-3">
-                    <a href="#productos" class="bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700 text-sm">
-                        Ver productos
-                    </a>
-                    <a href="#contacto" class="border border-blue-600 text-blue-600 px-5 py-2 rounded hover:bg-blue-50 text-sm">
-                        Contacto
-                    </a>
-                </div>
+      <!-- Features Section -->
+      <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-lg shadow-sm border p-6 text-center">
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+          >
+            <svg
+              class="w-8 h-8 text-blue-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">
+            Compra Segura
+          </h3>
+          <p class="text-gray-600">Transacciones protegidas y seguras</p>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-sm border p-6 text-center">
+          <div
+            class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"
+          >
+            <svg
+              class="w-8 h-8 text-green-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Envío Gratis</h3>
+          <p class="text-gray-600">En compras superiores a €50</p>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-sm border p-6 text-center">
+          <div
+            class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4"
+          >
+            <svg
+              class="w-8 h-8 text-purple-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Satisfacción</h3>
+          <p class="text-gray-600">
+            Garantía de calidad en todos nuestros productos
+          </p>
+        </div>
+      </section>
+
+      <!-- Products Section -->
+      <section class="mb-12">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-2">
+            Productos Destacados
+          </h2>
+          <p class="text-gray-600">
+            Descubre nuestra selección de productos más populares
+          </p>
+        </div>
+
+        <!-- Product Cards Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <!-- Product Card 1 - Camiseta Básica -->
+          <article
+            class="border rounded-lg shadow p-4 bg-white hover:shadow-lg transition-shadow"
+          >
+            <!-- Skeleton placeholder para imagen -->
+            <div
+              class="w-full h-48 bg-gray-200 rounded-md mb-4 animate-pulse"
+            ></div>
+            <h3 class="text-lg font-medium text-gray-900 mb-2">
+              Camiseta Básica
+            </h3>
+            <p class="text-sm text-gray-600 mb-3">
+              Camiseta de algodón 100% orgánico, perfecta para el día a día
+            </p>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded"
+                >Unisex</span
+              >
+              <span class="text-xs text-green-600 font-medium"
+                >En stock: 25</span
+              >
             </div>
-            <!-- Imagen ilustrativa (placeholder) -->
-            <div class="bg-gradient-to-br from-blue-100 to-blue-200 aspect-video rounded-lg flex items-center justify-center">
-                <!-- Reemplaza luego por <img> -->
-                <span class="text-blue-700 font-semibold">Imagen / Banner</span>
+            <div class="flex items-center justify-between">
+              <p class="text-xl font-semibold text-blue-600">€19.99</p>
+              <button
+                class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                aria-label="Agregar Camiseta Básica al carrito"
+                data-product-id="1"
+              >
+                Agregar al carrito
+              </button>
             </div>
-        </section>
+          </article>
 
-        <!-- SECCIÓN PRODUCTOS: agrupamos con un id para navegación -->
-        <section id="productos" class="space-y-8">
-            <header>
-                <h2 class="text-2xl font-semibold">Productos destacados</h2>
-                <p class="text-gray-500 text-sm">Ejemplo simple de tarjetas de producto.</p>
-            </header>
-
-            <!-- GRID: responsive (1 col móvil, 2 mediano, 4 grande) -->
-            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                <!-- Cada producto como <article> semántico -->
-                <article class="bg-white rounded shadow-sm overflow-hidden hover:shadow transition">
-                    <!-- Imagen (placeholder) -->
-                    <div class="bg-gray-200 h-40 flex items-center justify-center text-gray-500 text-sm">
-                        Imagen
-                    </div>
-                    <!-- Info -->
-                    <div class="p-4 space-y-2">
-                        <h3 class="font-medium">Camiseta Básica</h3>
-                        <p class="text-sm text-gray-500">100% algodón.</p>
-                        <div class="flex items-center justify-between">
-                            <span class="font-semibold text-blue-600">€15.99</span>
-                            <button class="text-xs bg-blue-600 text-white px-2 py-1 rounded hover:bg-blue-700">
-                                Añadir
-                            </button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="bg-white rounded shadow-sm overflow-hidden hover:shadow transition">
-                    <div class="bg-gray-200 h-40 flex items-center justify-center text-gray-500 text-sm">
-                        Imagen
-                    </div>
-                    <div class="p-4 space-y-2">
-                        <h3 class="font-medium">Sudadera Unisex</h3>
-                        <p class="text-sm text-gray-500">Suave y cómoda.</p>
-                        <div class="flex items-center justify-between">
-                            <span class="font-semibold text-blue-600">€29.99</span>
-                            <button class="text-xs bg-blue-600 text-white px-2 py-1 rounded hover:bg-blue-700">
-                                Añadir
-                            </button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="bg-white rounded shadow-sm overflow-hidden hover:shadow transition">
-                    <div class="bg-gray-200 h-40 flex items-center justify-center text-gray-500 text-sm">
-                        Imagen
-                    </div>
-                    <div class="p-4 space-y-2">
-                        <h3 class="font-medium">Pantalón Casual</h3>
-                        <p class="text-sm text-gray-500">Corte recto.</p>
-                        <div class="flex items-center justify-between">
-                            <span class="font-semibold text-blue-600">€34.99</span>
-                            <button class="text-xs bg-blue-600 text-white px-2 py-1 rounded hover:bg-blue-700">
-                                Añadir
-                            </button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="bg-white rounded shadow-sm overflow-hidden hover:shadow transition">
-                    <div class="bg-gray-200 h-40 flex items-center justify-center text-gray-500 text-sm">
-                        Imagen
-                    </div>
-                    <div class="p-4 space-y-2">
-                        <h3 class="font-medium">Zapatillas Urbanas</h3>
-                        <p class="text-sm text-gray-500">Ligera y flexible.</p>
-                        <div class="flex items-center justify-between">
-                            <span class="font-semibold text-blue-600">€49.99</span>
-                            <button class="text-xs bg-blue-600 text-white px-2 py-1 rounded hover:bg-blue-700">
-                                Añadir
-                            </button>
-                        </div>
-                    </div>
-                </article>
+          <!-- Product Card 2 - Leggings Deportivos Mujer -->
+          <article
+            class="border rounded-lg shadow p-4 bg-white hover:shadow-lg transition-shadow"
+          >
+            <!-- Skeleton placeholder para imagen -->
+            <div
+              class="w-full h-48 bg-gray-200 rounded-md mb-4 animate-pulse"
+            ></div>
+            <h3 class="text-lg font-medium text-gray-900 mb-2">
+              Leggings Deportivos Mujer
+            </h3>
+            <p class="text-sm text-gray-600 mb-3">
+              Leggings elásticos de alta compresión, perfectos para entrenar
+            </p>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded"
+                >Mujer</span
+              >
+              <span class="text-xs text-green-600 font-medium"
+                >En stock: 30</span
+              >
             </div>
-        </section>
+            <div class="flex items-center justify-between">
+              <p class="text-xl font-semibold text-blue-600">€29.99</p>
+              <button
+                class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                aria-label="Agregar Leggings Deportivos Mujer al carrito"
+                data-product-id="7"
+              >
+                Agregar al carrito
+              </button>
+            </div>
+          </article>
 
-        <!-- SECCIONES DEMO CON IDS PARA MENÚ -->
-        <section id="hombre" class="space-y-3">
-            <h2 class="text-xl font-semibold">Hombre</h2>
-            <p class="text-sm text-gray-600">Aquí podrías filtrar productos de hombre.</p>
-        </section>
-
-        <section id="mujer" class="space-y-3">
-            <h2 class="text-xl font-semibold">Mujer</h2>
-            <p class="text-sm text-gray-600">Aquí podrías filtrar productos de mujer.</p>
-        </section>
-
-        <section id="ninos" class="space-y-3">
-            <h2 class="text-xl font-semibold">Niños</h2>
-            <p class="text-sm text-gray-600">Aquí podrías filtrar productos de niños.</p>
-        </section>
-
-        <!-- CONTACTO SIMPLE -->
-        <section id="contacto" class="space-y-4">
-            <h2 class="text-xl font-semibold">Contacto</h2>
-            <!-- Formulario base sin funcionalidad -->
-            <form class="bg-white p-4 rounded shadow space-y-3">
-                <!-- label: describe el input -->
-                <label class="block text-sm">
-                    <span class="font-medium">Nombre</span>
-                    <input type="text" class="mt-1 w-full border rounded px-3 py-2 text-sm focus:outline-none focus:ring focus:ring-blue-200" placeholder="Tu nombre">
-                </label>
-                <label class="block text-sm">
-                    <span class="font-medium">Email</span>
-                    <input type="email" class="mt-1 w-full border rounded px-3 py-2 text-sm focus:outline-none focus:ring focus:ring-blue-200" placeholder="tucorreo@ejemplo.com">
-                </label>
-                <label class="block text-sm">
-                    <span class="font-medium">Mensaje</span>
-                    <textarea rows="3" class="mt-1 w-full border rounded px-3 py-2 text-sm focus:outline-none focus:ring focus:ring-blue-200" placeholder="Escribe tu mensaje"></textarea>
-                </label>
-                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded text-sm hover:bg-blue-700">
-                    Enviar
-                </button>
-            </form>
-        </section>
-
+          <!-- Product Card 3 - Camiseta Running Hombre -->
+          <article
+            class="border rounded-lg shadow p-4 bg-white hover:shadow-lg transition-shadow"
+          >
+            <!-- Skeleton placeholder para imagen -->
+            <div
+              class="w-full h-48 bg-gray-200 rounded-md mb-4 animate-pulse"
+            ></div>
+            <h3 class="text-lg font-medium text-gray-900 mb-2">
+              Camiseta Running Hombre
+            </h3>
+            <p class="text-sm text-gray-600 mb-3">
+              Camiseta técnica transpirable con tecnología Dri-FIT para correr
+            </p>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded"
+                >Hombre</span
+              >
+              <span class="text-xs text-green-600 font-medium"
+                >En stock: 22</span
+              >
+            </div>
+            <div class="flex items-center justify-between">
+              <p class="text-xl font-semibold text-blue-600">€24.99</p>
+              <button
+                class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                aria-label="Agregar Camiseta Running Hombre al carrito"
+                data-product-id="8"
+              >
+                Agregar al carrito
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
     </main>
 
-    <!-- FOOTER: cierre del sitio -->
-    <footer class="mt-16 bg-white border-t">
-        <div class="max-w-6xl mx-auto px-4 py-6 text-sm flex flex-col md:flex-row justify-between gap-4">
-            <p class="text-gray-500">&copy; 2025 MiTienda. Todos los derechos reservados.</p>
-            <nav class="flex gap-4">
-                <a href="#" class="hover:text-blue-600">Privacidad</a>
-                <a href="#" class="hover:text-blue-600">Términos</a>
-                <a href="#contacto" class="hover:text-blue-600">Contacto</a>
-            </nav>
+    <!-- FOOTER SECTION -->
+    <footer class="bg-gray-800 text-white mt-auto">
+      <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Company Info -->
+          <div>
+            <h3 class="text-lg font-semibold mb-4">MiTienda</h3>
+            <p class="text-sm text-gray-300 mb-4">
+              Tu tienda de confianza para ropa y accesorios de calidad.
+            </p>
+            <p class="text-sm text-gray-300">
+              © 2024 MiTienda. Todos los derechos reservados.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Enlaces Rápidos</h4>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a
+                  href="index.html"
+                  class="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline"
+                >
+                  Inicio
+                </a>
+              </li>
+              <li>
+                <a
+                  href="pages/catalogo.html"
+                  class="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline"
+                >
+                  Catálogo
+                </a>
+              </li>
+              <li>
+                <a
+                  href="pages/carrito.html"
+                  class="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline"
+                >
+                  Carrito
+                </a>
+              </li>
+              <li>
+                <a
+                  href="pages/checkout.html"
+                  class="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline"
+                >
+                  Checkout
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Contacto</h4>
+            <ul class="space-y-2 text-sm text-gray-300">
+              <li>
+                <a
+                  href="mailto:info@mitienda.com"
+                  class="hover:text-white transition-colors focus:outline-none focus:underline"
+                >
+                  info@mitienda.com
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+34123456789"
+                  class="hover:text-white transition-colors focus:outline-none focus:underline"
+                >
+                  +34 123 456 789
+                </a>
+              </li>
+              <li>Horario: Lun-Vie 9:00-18:00</li>
+            </ul>
+          </div>
         </div>
+      </div>
     </footer>
-</body>
+
+    <!-- Shopping Cart JavaScript -->
+    <script src="assets/js/carrito.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
 </html>

@@ -94,19 +94,195 @@
         <p class="text-lg text-gray-600">Completa tu pedido de forma segura</p>
       </div>
 
-      <div class="bg-white rounded-lg shadow-sm border p-8 text-center">
-        <h3 class="text-xl font-semibold text-gray-800 mb-4">
-          Proceso de Checkout
-        </h3>
-        <p class="text-gray-600 mb-6">
-          Esta funcionalidad estará disponible próximamente
-        </p>
-        <a
-          href="../carrito.html"
-          class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 inline-block"
-        >
-          Volver al Carrito
-        </a>
+      <!-- Layout: 2 columnas desktop / 1 columna mobile -->
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-6">
+        <!-- Formularios (60%) -->
+        <section class="lg:col-span-3 space-y-6">
+          <!-- Datos personales -->
+          <div class="bg-white rounded-lg shadow-sm border p-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Datos personales</h3>
+            <form id="form-personales" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label for="nombre" class="block text-sm font-medium mb-1">Nombre *</label>
+                <input
+                  id="nombre"
+                  required
+                  placeholder="Ej: Juan"
+                  class="w-full rounded-lg border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+              <div>
+                <label for="apellidos" class="block text-sm font-medium mb-1">Apellidos *</label>
+                <input
+                  id="apellidos"
+                  required
+                  placeholder="Ej: Pérez Gómez"
+                  class="w-full rounded-lg border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium mb-1">Email *</label>
+                <input
+                  id="email"
+                  type="email"
+                  required
+                  placeholder="tucorreo@dominio.com"
+                  class="w-full rounded-lg border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+              <div>
+                <label for="telefono" class="block text-sm font-medium mb-1">Teléfono *</label>
+                <input
+                  id="telefono"
+                  type="tel"
+                  required
+                  placeholder="+34 600 000 000"
+                  class="w-full rounded-lg border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+            </form>
+          </div>
+
+          <!-- Dirección de envío -->
+          <div class="bg-white rounded-lg shadow-sm border p-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Dirección de envío</h3>
+            <form id="form-envio" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="md:col-span-2">
+                <label for="direccion" class="block text-sm font-medium mb-1">Dirección *</label>
+                <input
+                  id="direccion"
+                  required
+                  placeholder="Calle, número, piso"
+                  class="w-full rounded-lg border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+              <div>
+                <label for="ciudad" class="block text-sm font-medium mb-1">Ciudad *</label>
+                <input
+                  id="ciudad"
+                  required
+                  placeholder="Ej: Madrid"
+                  class="w-full rounded-lg border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+              <div>
+                <label for="cp" class="block text-sm font-medium mb-1">Código Postal *</label>
+                <input
+                  id="cp"
+                  required
+                  placeholder="Ej: 28001"
+                  class="w-full rounded-lg border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+              <div class="md:col-span-2">
+                <label for="pais" class="block text-sm font-medium mb-1">País *</label>
+                <select
+                  id="pais"
+                  required
+                  class="w-full rounded-lg border border-gray-300 p-3 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                  <option value="España" selected>España</option>
+                  <option>Portugal</option>
+                  <option>Francia</option>
+                  <option>Italia</option>
+                  <option>Alemania</option>
+                </select>
+              </div>
+              <div class="md:col-span-2 flex items-center gap-2">
+                <input id="guardarDir" type="checkbox" class="w-4 h-4" />
+                <label for="guardarDir" class="text-sm">Guardar dirección para futuras compras</label>
+              </div>
+            </form>
+          </div>
+
+          <!-- Pago -->
+          <div class="bg-white rounded-lg shadow-sm border p-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Pago</h3>
+            <div class="mb-4">
+              <label class="inline-flex items-center gap-2">
+                <input type="radio" name="metodoPago" value="tarjeta" checked class="w-4 h-4" />
+                <span>Pago con Tarjeta de Crédito</span>
+              </label>
+            </div>
+            <form id="form-pago" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="md:col-span-2">
+                <label for="numeroTarjeta" class="block text-sm font-medium mb-1">Número de tarjeta *</label>
+                <input
+                  id="numeroTarjeta"
+                  required
+                  placeholder="1234 5678 9012 3456"
+                  class="w-full rounded-lg border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+              <div class="md:col-span-2">
+                <label for="titular" class="block text-sm font-medium mb-1">Nombre del titular *</label>
+                <input
+                  id="titular"
+                  required
+                  placeholder="Como aparece en la tarjeta"
+                  class="w-full rounded-lg border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+              <div>
+                <label for="fecha" class="block text-sm font-medium mb-1">Fecha (MM/AA) *</label>
+                <input
+                  id="fecha"
+                  required
+                  placeholder="MM/AA"
+                  class="w-full rounded-lg border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+              <div>
+                <label for="cvv" class="block text-sm font-medium mb-1">CVV *</label>
+                <input
+                  id="cvv"
+                  required
+                  placeholder="Ej: 123"
+                  class="w-full rounded-lg border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+            </form>
+          </div>
+
+          <!-- Acciones -->
+          <div class="flex gap-3">
+            <a
+              href="../carrito.html"
+              class="px-5 py-3 rounded-lg border border-gray-300 hover:bg-gray-100 text-gray-700"
+            >
+              Editar carrito
+            </a>
+            <button
+               id="btn-finalizar"
+               type="button"
+               class="px-6 py-3 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 min-h-[44px]">
+               Finalizar compra
+            </button>
+
+          </div>
+        </section>
+
+        <!-- Resumen (40%) -->
+        <aside class="lg:col-span-2">
+          <div class="bg-white rounded-lg shadow-sm border p-6 sticky top-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Resumen de pedido</h3>
+            <div id="resumen-items" class="space-y-3"></div>
+            <div class="border-t mt-4 pt-4 space-y-2 text-sm">
+              <div class="flex justify-between">
+                <span>Subtotal</span>
+                <span id="subtotal">€0,00</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Envío</span>
+                <span id="envio">€0,00</span>
+              </div>
+              <div class="flex justify-between font-semibold text-lg">
+                <span>Total</span>
+                <span id="total">€0,00</span>
+              </div>
+            </div>
+          </div>
+        </aside>
       </div>
     </main>
 
@@ -120,9 +296,7 @@
             <p class="text-sm text-gray-300 mb-4">
               Tu tienda de confianza para ropa y accesorios de calidad.
             </p>
-            <p class="text-sm text-gray-300">
-              © 2024 MiTienda. Todos los derechos reservados.
-            </p>
+            <p class="text-sm text-gray-300">© 2024 MiTienda. Todos los derechos reservados.</p>
           </div>
 
           <!-- Quick Links -->
@@ -130,34 +304,22 @@
             <h4 class="text-lg font-semibold mb-4">Enlaces Rápidos</h4>
             <ul class="space-y-2 text-sm">
               <li>
-                <a
-                  href="../index.html"
-                  class="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline"
-                >
+                <a href="../index.html" class="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline">
                   Inicio
                 </a>
               </li>
               <li>
-                <a
-                  href="catalogo.html"
-                  class="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline"
-                >
+                <a href="catalogo.html" class="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline">
                   Catálogo
                 </a>
               </li>
               <li>
-                <a
-                  href="carrito.html"
-                  class="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline"
-                >
+                <a href="carrito.html" class="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline">
                   Carrito
                 </a>
               </li>
               <li>
-                <a
-                  href="checkout.html"
-                  class="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline"
-                >
+                <a href="checkout.html" class="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline">
                   Checkout
                 </a>
               </li>
@@ -169,18 +331,12 @@
             <h4 class="text-lg font-semibold mb-4">Contacto</h4>
             <ul class="space-y-2 text-sm text-gray-300">
               <li>
-                <a
-                  href="mailto:info@mitienda.com"
-                  class="hover:text-white transition-colors focus:outline-none focus:underline"
-                >
+                <a href="mailto:info@mitienda.com" class="hover:text-white transition-colors focus:outline-none focus:underline">
                   info@mitienda.com
                 </a>
               </li>
               <li>
-                <a
-                  href="tel:+34123456789"
-                  class="hover:text-white transition-colors focus:outline-none focus:underline"
-                >
+                <a href="tel:+34123456789" class="hover:text-white transition-colors focus:outline-none focus:underline">
                   +34 123 456 789
                 </a>
               </li>
@@ -191,8 +347,9 @@
       </div>
     </footer>
 
-    <!-- Shopping Cart JavaScript -->
+    <!-- JS -->
     <script src="../assets/js/carrito.js"></script>
     <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/checkout.js"></script>
   </body>
 </html>

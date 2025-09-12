@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Tienda - Catálogo Mujer</title>
+  </head>
+  <body class="bg-gray-50 text-gray-900 min-h-screen flex flex-col">
+    <!-- HEADER SECTION -->
+    <header class="bg-white shadow-sm border-b sticky top-0 z-50">
+      <div class="container mx-auto px-4">
+        <nav class="flex items-center justify-between py-4">
+          <!-- Logo/Brand -->
+          <div class="flex items-center">
+            <h1 class="text-2xl font-bold text-blue-600">
+              <a
+                href="../index.html"
+                class="hover:text-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded"
+              >
+                MiTienda
+              </a>
+            </h1>
+          </div>
+
+          <!-- Navigation Menu -->
+          <ul class="hidden md:flex items-center space-x-8" role="menubar">
+            <li role="none">
+              <a
+                href="../index.html"
+                class="text-gray-700 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded px-2 py-1"
+                role="menuitem"
+              >
+                Inicio
+              </a>
+            </li>
+            <li role="none">
+              <a
+                href="catalogo.html"
+                class="text-blue-600 font-medium hover:text-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded px-2 py-1"
+                role="menuitem"
+                aria-current="page"
+              >
+                Catálogo
+              </a>
+            </li>
+            <li role="none">
+              <a
+                href="carrito.html"
+                class="text-gray-700 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded px-2 py-1 relative"
+                role="menuitem"
+              >
+                Carrito
+                <span
+                  id="cart-counter"
+                  class="absolute -top-2 -right-2 min-w-5 h-5 flex items-center justify-center text-xs font-semibold bg-gray-300 text-gray-600 rounded-full px-1 text-sm md:text-base transition-colors"
+                >
+                  0
+                </span>
+              </a>
+            </li>
+            <li role="none">
+              <a
+                href="checkout.html"
+                class="text-gray-700 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded px-2 py-1"
+                role="menuitem"
+              >
+                Checkout
+              </a>
+            </li>
+          </ul>
+
+          <!-- Mobile Menu Button -->
+          <button
+            class="md:hidden p-2 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            aria-label="Abrir menú de navegación"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="container mx-auto px-4 py-8 flex-1">
+      <div class="mb-8">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">
+          Catálogo de Productos - Mujer
+        </h2>
+        <p class="text-lg text-gray-600">
+          Descubre nuestra amplia selección de productos
+        </p>
+      </div>
+
+      <!-- Product Cards Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <!-- Product Card 1 - Zapatillas Training Mujer -->
+        <article
+          class="border rounded-lg shadow p-4 bg-white hover:shadow-lg transition-shadow"
+        >
+          <!-- Skeleton placeholder para imagen -->
+          <div
+            class="w-full h-48 bg-gray-200 rounded-md mb-4 animate-pulse"
+          ></div>
+          <h3 class="text-lg font-medium text-gray-900 mb-2">
+            Zapatillas Training Mujer
+          </h3>
+          <p class="text-sm text-gray-600 mb-3">
+            Zapatillas versátiles para entrenamiento y gimnasio
+          </p>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded"
+              >Mujer</span
+            >
+            <span class="text-xs text-green-600 font-medium">En stock: 14</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <p class="text-xl font-semibold text-blue-600">€65.99</p>
+            <button
+              class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              aria-label="Agregar Zapatillas Training Mujer al carrito"
+              data-product-id="11"
+            >
+              Agregar al carrito
+            </button>
+          </div>
+        </article>
+
+        <!-- Product Card 2 - Sudadera Fitness Mujer -->
+        <article
+          class="border rounded-lg shadow p-4 bg-white hover:shadow-lg transition-shadow"
+        >
+          <!-- Skeleton placeholder para imagen -->
+          <div
+            class="w-full h-48 bg-gray-200 rounded-md mb-4 animate-pulse"
+          ></div>
+          <h3 class="text-lg font-medium text-gray-900 mb-2">
+            Sudadera Fitness Mujer
+          </h3>
+          <p class="text-sm text-gray-600 mb-3">
+            Sudadera crop con capucha, ideal para pre y post entreno
+          </p>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded"
+              >Mujer</span
+            >
+            <span class="text-xs text-green-600 font-medium">En stock: 12</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <p class="text-xl font-semibold text-blue-600">€38.99</p>
+            <button
+              class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              aria-label="Agregar Sudadera Fitness Mujer al carrito"
+              data-product-id="15"
+            >
+              Agregar al carrito
+            </button>
+          </div>
+        </article>
+
+        <!-- Product Card 3 - Vestido Casual -->
+        <article
+          class="border rounded-lg shadow p-4 bg-white hover:shadow-lg transition-shadow"
+        >
+          <!-- Skeleton placeholder para imagen -->
+          <div
+            class="w-full h-48 bg-gray-200 rounded-md mb-4 animate-pulse"
+          ></div>
+          <h3 class="text-lg font-medium text-gray-900 mb-2">
+            Vestido Casual
+          </h3>
+          <p class="text-sm text-gray-600 mb-3">
+            Vestido ligero y cómodo, ideal para el día a día
+          </p>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded"
+              >Mujer</span
+            >
+            <span class="text-xs text-green-600 font-medium">En stock: 18</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <p class="text-xl font-semibold text-blue-600">€39.99</p>
+            <button
+              class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              aria-label="Agregar Vestido Casual al carrito"
+              data-product-id="6"
+            >
+              Agregar al carrito
+            </button>
+          </div>
+        </article>
+
+        <!-- Product Card 4 - Leggings Deportivos Mujer -->
+        <article
+          class="border rounded-lg shadow p-4 bg-white hover:shadow-lg transition-shadow"
+        >
+          <!-- Skeleton placeholder para imagen -->
+          <div
+            class="w-full h-48 bg-gray-200 rounded-md mb-4 animate-pulse"
+          ></div>
+          <h3 class="text-lg font-medium text-gray-900 mb-2">
+            Leggings Deportivos Mujer
+          </h3>
+          <p class="text-sm text-gray-600 mb-3">
+            Leggings elásticos de compresión, perfectos para entrenar
+          </p>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded"
+              >Mujer</span
+            >
+            <span class="text-xs text-green-600 font-medium">En stock: 30</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <p class="text-xl font-semibold text-blue-600">€29.99</p>
+            <button
+              class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              aria-label="Agregar Leggings Deportivos Mujer al carrito"
+              data-product-id="7"
+            >
+              Agregar al carrito
+            </button>
+          </div>
+        </article>
+
+        <!-- Product Card 5 - Camiseta Básica -->
+        <article
+          class="border rounded-lg shadow p-4 bg-white hover:shadow-lg transition-shadow"
+        >
+          <!-- Skeleton placeholder para imagen -->
+          <div
+            class="w-full h-48 bg-gray-200 rounded-md mb-4 animate-pulse"
+          ></div>
+          <h3 class="text-lg font-medium text-gray-900 mb-2">
+            Camiseta Básica
+          </h3>
+          <p class="text-sm text-gray-600 mb-3">
+            Camiseta algodón 100% orgánico, perfecta para el día a día
+          </p>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs bg-green-100 text-green-600 px-2 py-1 rounded"
+              >Unisex</span
+            >
+            <span class="text-xs text-green-600 font-medium">En stock: 25</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <p class="text-xl font-semibold text-blue-600">€19.99</p>
+            <button
+              class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              aria-label="Agregar Camiseta Básica unisex al carrito"
+              data-product-id="1"
+            >
+              Agregar al carrito
+            </button>
+          </div>
+        </article>
+
+        <!-- Product Card 6 - Pantalones Vaqueros -->
+        <article
+          class="border rounded-lg shadow p-4 bg-white hover:shadow-lg transition-shadow"
+        >
+          <!-- Skeleton placeholder para imagen -->
+          <div
+            class="w-full h-48 bg-gray-200 rounded-md mb-4 animate-pulse"
+          ></div>
+          <h3 class="text-lg font-medium text-gray-900 mb-2">
+            Pantalones Vaqueros
+          </h3>
+          <p class="text-sm text-gray-600 mb-3">
+            Vaqueros de corte clásico con gran durabilidad
+          </p>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs bg-green-100 text-green-600 px-2 py-1 rounded"
+              >Unisex</span
+            >
+            <span class="text-xs text-green-600 font-medium">En stock: 15</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <p class="text-xl font-semibold text-blue-600">€49.99</p>
+            <button
+              class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              aria-label="Agregar Pantalones Vaqueros Unisex al carrito"
+              data-product-id="2"
+            >
+              Agregar al carrito
+            </button>
+          </div>
+        </article>
+
+        <!-- Product Card 7 - Chaqueta Denim -->
+        <article
+          class="border rounded-lg shadow p-4 bg-white hover:shadow-lg transition-shadow"
+        >
+          <!-- Skeleton placeholder para imagen -->
+          <div
+            class="w-full h-48 bg-gray-200 rounded-md mb-4 animate-pulse"
+          ></div>
+          <h3 class="text-lg font-medium text-gray-900 mb-2">
+            Chaqueta Denim<!-- Nombre -->
+          </h3>
+          <p class="text-sm text-gray-600 mb-3">
+            Chaqueta de mezclilla clásica, perfecta para cualquier temporada<!-- descripcion -->
+          </p>
+          <div class="flex items-center justify-between mb-2"><!-- categoria -->
+            <span class="text-xs bg-green-100 text-green-600 px-2 py-1 rounded"
+              >Unisex</span
+            >
+            <span class="text-xs text-green-600 font-medium">En stock: 8</span> <!-- stock -->
+          </div>
+          <div class="flex items-center justify-between"><!-- precio -->
+            <p class="text-xl font-semibold text-blue-600">€59.99</p>
+            <button
+              class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              aria-label="Agregar Chaqueta Denim Unisex al carrito"
+              data-product-id="5"
+            >
+              Agregar al carrito
+            </button>
+          </div>
+        </article>
+
+        <!-- Product Card 8 - Top Deportivo Mujer -->
+        <article
+          class="border rounded-lg shadow p-4 bg-white hover:shadow-lg transition-shadow"
+        >
+          <!-- Skeleton placeholder para imagen -->
+          <div
+            class="w-full h-48 bg-gray-200 rounded-md mb-4 animate-pulse"
+          ></div>
+          <h3 class="text-lg font-medium text-gray-900 mb-2">
+            Top Deportivo Mujer<!-- Nombre -->
+          </h3>
+          <p class="text-sm text-gray-600 mb-3">
+            Top deportivo mujer con soporte medio, ideal para yoga y fitness<!-- descripcion -->
+          </p>
+          <div class="flex items-center justify-between mb-2"><!-- categoria -->
+            <span class="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded"
+              >Mujer</span
+            >
+            <span class="text-xs text-green-600 font-medium">En stock: 25</span> <!-- stock -->
+          </div>
+          <div class="flex items-center justify-between"><!-- precio -->
+            <p class="text-xl font-semibold text-blue-600">€19.99</p>
+            <button
+              class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              aria-label="Agregar Top Deportivo Mujer al carrito"
+              data-product-id="9"
+            >
+              Agregar al carrito
+            </button>
+          </div>
+        </article>
+
+        <!-- Product Card 9 - Mallas Yoga Mujer -->
+        <article
+          class="border rounded-lg shadow p-4 bg-white hover:shadow-lg transition-shadow"
+        >
+          <!-- Skeleton placeholder para imagen -->
+          <div
+            class="w-full h-48 bg-gray-200 rounded-md mb-4 animate-pulse"
+          ></div>
+          <h3 class="text-lg font-medium text-gray-900 mb-2">
+            Mallas Yoga Mujer<!-- Nombre -->
+          </h3>
+          <p class="text-sm text-gray-600 mb-3">
+            Mallas mujer de cintura alta con tejido suave y flexible para yoga<!-- descripcion -->
+          </p>
+          <div class="flex items-center justify-between mb-2"><!-- categoria -->
+            <span class="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded"
+              >Mujer</span
+            >
+            <span class="text-xs text-green-600 font-medium">En stock: 20</span> <!-- stock -->
+          </div>
+          <div class="flex items-center justify-between"><!-- precio -->
+            <p class="text-xl font-semibold text-blue-600">€32.99</p>
+            <button
+              class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              aria-label="Agregar Mallas Yoga Mujer al carrito"
+              data-product-id="13"
+            >
+              Agregar al carrito
+            </button>
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer class="bg-gray-800 text-white mt-auto">
+      <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Company Info -->
+          <div>
+            <h3 class="text-lg font-semibold mb-4">MiTienda</h3>
+            <p class="text-sm text-gray-300 mb-4">
+              Tu tienda de confianza para ropa y accesorios de calidad.
+            </p>
+            <p class="text-sm text-gray-300">
+              © 2024 MiTienda. Todos los derechos reservados.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Enlaces Rápidos</h4>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a
+                  href="../index.html"
+                  class="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline"
+                >
+                  Inicio
+                </a>
+              </li>
+              <li>
+                <a
+                  href="catalogo.html"
+                  class="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline"
+                >
+                  Catálogo
+                </a>
+              </li>
+              <li>
+                <a
+                  href="carrito.html"
+                  class="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline"
+                >
+                  Carrito
+                </a>
+              </li>
+              <li>
+                <a
+                  href="checkout.html"
+                  class="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline"
+                >
+                  Checkout
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Contacto</h4>
+            <ul class="space-y-2 text-sm text-gray-300">
+              <li>
+                <a
+                  href="mailto:info@mitienda.com"
+                  class="hover:text-white transition-colors focus:outline-none focus:underline"
+                >
+                  info@mitienda.com
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+34123456789"
+                  class="hover:text-white transition-colors focus:outline-none focus:underline"
+                >
+                  +34 123 456 789
+                </a>
+              </li>
+              <li>Horario: Lun-Vie 9:00-18:00</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Shopping Cart JavaScript -->
+    <script src="../assets/js/carrito.js"></script>
+    <script src="../assets/js/app.js"></script>
+  </body>
+</html>

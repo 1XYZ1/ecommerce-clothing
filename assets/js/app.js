@@ -8,6 +8,36 @@
 // FUNCIÓN PRINCIPAL
 // ========================================
 
+// ========================================
+// MENÚ MÓVIL
+// ========================================
+
+/**
+ * FUNCIÓN: Configurar el menú móvil
+ * ¿Qué hace? Hace que el botón del menú móvil funcione
+ */
+function configurarMenuMovil() {
+  // Buscar el botón del menú móvil
+  var botonMenu = document.getElementById("mobile-menu-button");
+  var menuMovil = document.getElementById("mobile-menu");
+
+  // Si encontramos el botón, le asignamos la función
+  if (botonMenu && menuMovil) {
+    botonMenu.onclick = function() {
+      // Si el menú está oculto, lo mostramos. Si está visible, lo ocultamos
+      if (menuMovil.classList.contains("hidden")) {
+        menuMovil.classList.remove("hidden");
+      } else {
+        menuMovil.classList.add("hidden");
+      }
+    };
+  }
+}
+
+// ========================================
+// FUNCIÓN PRINCIPAL ACTUALIZADA
+// ========================================
+
 /**
  * FUNCIÓN: Inicializar la aplicación
  * ¿Qué hace? Configura los botones para que funcionen con localStorage
@@ -17,7 +47,12 @@ function iniciarTienda() {
 
   // Configurar botones de agregar al carrito
   prepararBotones();
+
+  // Configurar menú móvil
+  configurarMenuMovil();
 }
+
+
 
 // ========================================
 // MANEJO DE BOTONES
@@ -30,7 +65,7 @@ function iniciarTienda() {
 function prepararBotones() {
   var botones = document.querySelectorAll("[data-product-id]");
 
-  console.log("🔘 Encontré", botones.length, "botones");
+
 
   // Para cada botón, le asignamos la función
   for (var i = 0; i < botones.length; i++) {
@@ -49,7 +84,7 @@ function asignarFuncionAlBoton(boton) {
     // Obtenemos el ID del producto
     var idProducto = this.getAttribute("data-product-id");
 
-    console.log("👆 Click en producto:", idProducto);
+
 
     // Agregamos al carrito (actualiza localStorage)
     agregarProducto(idProducto);

@@ -37,7 +37,7 @@ function guardarCarrito(carrito) {
  * ¿Qué hace? Añade un producto al carrito y lo guarda en localStorage
  */
 function agregarProducto(idProducto) {
-  console.log("➕ Agregando producto:", idProducto);
+
 
   // Obtenemos el carrito actual
   var carrito = obtenerCarrito();

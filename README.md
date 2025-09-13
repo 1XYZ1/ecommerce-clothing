@@ -181,7 +181,7 @@ navigationInstance.hideAllMenus()   // Cerrar todos los menús
      "slug": "nuevo-producto",
      "nombre": "Nuevo Producto",
      "descripcion": "Descripción del producto",
-     "precio": 29.99,
+     "precio": 30000,
      "stock": 10,
      "genero": "unisex",
      "categoria": "nueva-categoria",

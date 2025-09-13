@@ -1,6 +1,6 @@
 (function () {
   // util para formatear euros en es-es (para el resumen)
-  const money = (n) => new Intl.NumberFormat("es-ES", { style: "currency", currency: "EUR" }).format(n);
+  const money = (n) => new Intl.NumberFormat("es-ES", { style: "currency", currency: "CLP" }).format(n);
 
   // lee el carrito que ya usa el proyecto
   function obtenerCarrito() {
@@ -42,7 +42,7 @@
       cont.appendChild(row);
     });
 
-    const envio = subtotal >= 50 ? 0 : 4.99;
+    const envio = subtotal >= 1000 ? 0 : 3000;
     const total = subtotal + envio;
     elSubtotal.textContent = money(subtotal);
     elEnvio.textContent = envio === 0 ? "Gratis" : money(envio);

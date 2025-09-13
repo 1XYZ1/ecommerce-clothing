@@ -1,95 +1,140 @@
-/**
- * CARRITO DE COMPRAS - VERSIÓN BÁSICA
- *
- * Solo funciones esenciales para agregar/quitar productos del localStorage
- */
+// ================================
+// FUNCIONES DE LOCALSTORAGE
+// ================================
+// Diccionario de productos
+const productosInfo = {
+  "11": { nombre: "Camiseta Deportiva", precio: 15000 },
+  "12": { nombre: "Pantalón Gym", precio: 25000 },
+  "15": { nombre: "Botella de Agua", precio: 8000 }
+};
 
-// ========================================
-// FUNCIONES BÁSICAS DE LOCALSTORAGE
-// ========================================
 
-/**
- * FUNCIÓN: Obtener el carrito del localStorage
- * ¿Qué hace? Lee el carrito guardado en el navegador
- */
 function obtenerCarrito() {
   var carritoGuardado = localStorage.getItem("mi-carrito");
-
-  // Si no existe, devolvemos una lista vacía
-  if (carritoGuardado === null) {
-    return [];
-  }
-
-  // Si existe, lo convertimos de texto a lista
-  return JSON.parse(carritoGuardado);
+  return carritoGuardado ? JSON.parse(carritoGuardado) : [];
 }
 
-/**
- * FUNCIÓN: Guardar el carrito en localStorage
- * ¿Qué hace? Guarda el carrito en el navegador
- */
 function guardarCarrito(carrito) {
   localStorage.setItem("mi-carrito", JSON.stringify(carrito));
 }
 
-/**
- * FUNCIÓN: Agregar un producto al carrito
- * ¿Qué hace? Añade un producto al carrito y lo guarda en localStorage
- */
+// ================================
+// FUNCIONES DEL CARRITO
+// ================================
+
 function agregarProducto(idProducto) {
-
-
-  // Obtenemos el carrito actual
   var carrito = obtenerCarrito();
+  var productoEncontrado = carrito.find(item => item.id === idProducto);
 
-  // Buscamos si el producto ya está en el carrito
-  var productoEncontrado = false;
-  for (var i = 0; i < carrito.length; i++) {
-    if (carrito[i].id === idProducto) {
-      carrito[i].cantidad = carrito[i].cantidad + 1;
-      productoEncontrado = true;
-      break;
-    }
+  if (productoEncontrado) {
+    productoEncontrado.cantidad++;
+  } else {
+    carrito.push({ id: idProducto, cantidad: 1 });
   }
 
-  // Si no lo encontramos, lo agregamos como nuevo
-  if (!productoEncontrado) {
-    carrito.push({
-      id: idProducto,
-      cantidad: 1,
-    });
-  }
-
-  // Guardamos el carrito actualizado
   guardarCarrito(carrito);
+  renderCarrito();
 }
 
-/**
- * FUNCIÓN: Eliminar un producto del carrito
- * ¿Qué hace? Quita un producto del carrito y actualiza localStorage
- */
+function eliminarProducto(idProducto) {
+  console.log("❌ Eliminando producto:", idProducto);
+  var carrito = obtenerCarrito().filter(item => item.id !== idProducto);
+  guardarCarrito(carrito);
+  renderCarrito();
+}
+
+function vaciarCarrito() {
+  guardarCarrito([]);
+  console.log("🗑️ Carrito vaciado");
+  renderizarCarrito(); // 🔥 refrescar UI
+}
+
 function eliminarProducto(idProducto) {
   console.log("❌ Eliminando producto:", idProducto);
 
   var carrito = obtenerCarrito();
+  var carritoNuevo = carrito.filter(p => p.id !== idProducto);
 
-  // Creamos un nuevo carrito sin el producto eliminado
-  var carritoNuevo = [];
-  for (var i = 0; i < carrito.length; i++) {
-    if (carrito[i].id !== idProducto) {
-      carritoNuevo.push(carrito[i]);
-    }
+  guardarCarrito(carritoNuevo);
+  renderizarCarrito(); // 🔥 refrescar UI
+}
+
+function eliminarProducto(idProducto) {
+  console.log("❌ Eliminando producto:", idProducto);
+
+  var carrito = obtenerCarrito();
+  var carritoNuevo = carrito.filter(p => p.id !== idProducto);
+
+  guardarCarrito(carritoNuevo);
+  renderizarCarrito(); // 🔥 refrescar UI
+}
+
+
+// ================================
+// CATÁLOGO DE PRODUCTOS
+// ================================
+
+const productos = [
+  { id: "11", nombre: "Polera Blanca", precio: 10000 },
+  { id: "12", nombre: "Pantalón Jeans", precio: 20000 },
+  { id: "15", nombre: "Zapatillas", precio: 35000 },
+];
+
+// ================================
+// RENDERIZAR EL CARRITO
+// ================================
+
+function renderCarrito() {
+  var carrito = obtenerCarrito();
+  var contenedor = document.getElementById("cart-container");
+
+  contenedor.innerHTML = "";
+
+  if (carrito.length === 0) {
+    contenedor.innerHTML = `
+      <h3 class="text-xl font-semibold text-gray-800 mb-4">Carrito Vacío</h3>
+      <p class="text-gray-600 mb-6">No tienes productos en tu carrito aún</p>
+      <a href="catalogo.html"
+        class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 inline-block">
+        Ir al Catálogo
+      </a>
+    `;
+    return;
   }
 
-  // Guardamos el carrito nuevo
-  guardarCarrito(carritoNuevo);
+  let total = 0;
+
+  carrito.forEach(item => {
+    const producto = productos.find(p => p.id === item.id);
+    if (producto) {
+      const subtotal = producto.precio * item.cantidad;
+      total += subtotal;
+
+      contenedor.innerHTML += `
+        <div class="flex justify-between items-center border-b py-2">
+          <span>${producto.nombre} (x${item.cantidad})</span>
+          <span>$${subtotal.toLocaleString()}</span>
+          <button onclick="eliminarProducto('${producto.id}')" 
+                  class="text-red-500 hover:underline ml-4">Eliminar</button>
+        </div>
+      `;
+    }
+  });
+
+  contenedor.innerHTML += `
+    <div class="flex justify-between items-center mt-4 font-bold">
+      <span>Total:</span>
+      <span>$${total.toLocaleString()}</span>
+    </div>
+    <button onclick="vaciarCarrito()" 
+            class="bg-red-600 text-white px-4 py-2 rounded-lg mt-4 hover:bg-red-700">
+      Vaciar Carrito
+    </button>
+  `;
 }
 
-/**
- * FUNCIÓN: Vaciar todo el carrito
- * ¿Qué hace? Elimina todos los productos del carrito
- */
-function vaciarCarrito() {
-  guardarCarrito([]);
-  console.log("🗑️ Carrito vaciado");
-}
+// ================================
+// INICIALIZAR
+// ================================
+document.addEventListener("DOMContentLoaded", renderCarrito);
+

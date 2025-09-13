@@ -9,30 +9,17 @@
 // ========================================
 
 // ========================================
-// MENÚ MÓVIL
+// NAVEGACIÓN
 // ========================================
 
 /**
- * FUNCIÓN: Configurar el menú móvil
- * ¿Qué hace? Hace que el botón del menú móvil funcione
+ * NOTA: La lógica de navegación se ha movido a navigation.js
+ * Este componente se encarga automáticamente de:
+ * - Menú móvil
+ * - Dropdowns de catálogo
+ * - Estados activos
+ * - Eventos globales
  */
-function configurarMenuMovil() {
-  // Buscar el botón del menú móvil
-  var botonMenu = document.getElementById("mobile-menu-button");
-  var menuMovil = document.getElementById("mobile-menu");
-
-  // Si encontramos el botón, le asignamos la función
-  if (botonMenu && menuMovil) {
-    botonMenu.onclick = function() {
-      // Si el menú está oculto, lo mostramos. Si está visible, lo ocultamos
-      if (menuMovil.classList.contains("hidden")) {
-        menuMovil.classList.remove("hidden");
-      } else {
-        menuMovil.classList.add("hidden");
-      }
-    };
-  }
-}
 
 // ========================================
 // FUNCIÓN PRINCIPAL ACTUALIZADA
@@ -48,8 +35,7 @@ function iniciarTienda() {
   // Configurar botones de agregar al carrito
   prepararBotones();
 
-  // Configurar menú móvil
-  configurarMenuMovil();
+  // La navegación se inicializa automáticamente via navigation.js
 }
 
 

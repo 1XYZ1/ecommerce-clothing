@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+
     <title>Tienda - Inicio</title>
   </head>
   <body class="bg-gray-50 text-gray-900 min-h-screen flex flex-col">
@@ -36,14 +38,49 @@
                 Inicio
               </a>
             </li>
-            <li role="none">
-              <a
-                href="pages/catalogo.html"
-                class="text-gray-700 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded px-2 py-1"
+            <li role="none" class="relative">
+              <button
+                id="catalogo-dropdown-button"
+                class="text-gray-700 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded px-2 py-1 flex items-center"
                 role="menuitem"
+                aria-expanded="false"
+                aria-haspopup="true"
               >
                 Catálogo
-              </a>
+                <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <!-- Dropdown Menu -->
+              <div
+                id="catalogo-dropdown"
+                class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg border hidden z-50"
+                role="menu"
+              >
+                <div class="py-1">
+                  <a
+                    href="pages/hombre.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors"
+                    role="menuitem"
+                  >
+                    Hombre
+                  </a>
+                  <a
+                    href="pages/mujer.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors"
+                    role="menuitem"
+                  >
+                    Mujer
+                  </a>
+                  <a
+                    href="pages/catalogo.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors border-t"
+                    role="menuitem"
+                  >
+                    Ver Todo
+                  </a>
+                </div>
+              </div>
             </li>
             <li role="none">
               <a
@@ -62,7 +99,7 @@
             </li>
             <li role="none">
               <a
-                href="checkout/checkout.html"
+                href="pages/checkout/checkout.html"
                 class="text-gray-700 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded px-2 py-1"
                 role="menuitem"
               >
@@ -106,13 +143,41 @@
                       </a>
                     </li>
                     <li role="none">
-                      <a
-                        href="pages/catalogo.html"
-                        class="block px-4 py-2 text-gray-700 hover:bg-gray-50 transition-colors"
+                      <button
+                        id="mobile-catalogo-dropdown-button"
+                        class="w-full text-left block px-4 py-2 text-gray-700 hover:bg-gray-50 transition-colors flex items-center justify-between"
                         role="menuitem"
+                        aria-expanded="false"
                       >
                         Catálogo
-                      </a>
+                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                      </button>
+                      <!-- Mobile Dropdown -->
+                      <div id="mobile-catalogo-dropdown" class="hidden bg-gray-50">
+                        <a
+                          href="pages/hombre.html"
+                          class="block px-8 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                          role="menuitem"
+                        >
+                          Hombre
+                        </a>
+                        <a
+                          href="pages/mujer.html"
+                          class="block px-8 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                          role="menuitem"
+                        >
+                          Mujer
+                        </a>
+                        <a
+                          href="pages/catalogo.html"
+                          class="block px-8 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                          role="menuitem"
+                        >
+                          Ver Todo
+                        </a>
+                      </div>
                     </li>
                     <li role="none">
                       <a
@@ -125,7 +190,7 @@
                     </li>
                     <li role="none">
                       <a
-                        href="checkout/checkout.html"
+                        href="pages/checkout/checkout.html"
                         class="block px-4 py-2 text-gray-700 hover:bg-gray-50 transition-colors"
                         role="menuitem"
                       >
@@ -276,7 +341,7 @@
               >
             </div>
             <div class="flex items-center justify-between">
-              <p class="text-xl font-semibold text-blue-600">€19.99</p>
+              <p class="text-xl font-semibold text-blue-600">$20.000</p>
               <button
                 class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                 aria-label="Agregar Camiseta Básica al carrito"
@@ -310,7 +375,7 @@
               >
             </div>
             <div class="flex items-center justify-between">
-              <p class="text-xl font-semibold text-blue-600">€29.99</p>
+              <p class="text-xl font-semibold text-blue-600">$20.000</p>
               <button
                 class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                 aria-label="Agregar Leggings Deportivos Mujer al carrito"
@@ -344,7 +409,7 @@
               >
             </div>
             <div class="flex items-center justify-between">
-              <p class="text-xl font-semibold text-blue-600">€24.99</p>
+              <p class="text-xl font-semibold text-blue-600">$20.000</p>
               <button
                 class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                 aria-label="Agregar Camiseta Running Hombre al carrito"
@@ -403,7 +468,7 @@
               </li>
               <li>
                 <a
-                  href="pages/checkout.html"
+                  href="pages/checkout/checkout.html"
                   class="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline"
                 >
                   Checkout
@@ -429,7 +494,7 @@
                   href="tel:+34123456789"
                   class="hover:text-white transition-colors focus:outline-none focus:underline"
                 >
-                  +34 123 456 789
+                  + 56 945 442 221
                 </a>
               </li>
               <li>Horario: Lun-Vie 9:00-18:00</li>
@@ -441,6 +506,9 @@
 
     <!-- Shopping Cart JavaScript -->
     <script src="assets/js/carrito.js"></script>
+    <!-- Navigation Component -->
+    <script src="assets/js/navigation.js"></script>
+    <!-- Main App -->
     <script src="assets/js/app.js"></script>
   </body>
 </html>

@@ -35,15 +35,50 @@
                 Inicio
               </a>
             </li>
-            <li role="none">
-              <a
-                href="catalogo.html"
-                class="text-blue-600 font-medium hover:text-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded px-2 py-1"
+            <li role="none" class="relative">
+              <button
+                id="catalogo-dropdown-button"
+                class="text-blue-600 font-medium hover:text-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded px-2 py-1 flex items-center"
                 role="menuitem"
+                aria-expanded="false"
+                aria-haspopup="true"
                 aria-current="page"
               >
                 Catálogo
-              </a>
+                <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <!-- Dropdown Menu -->
+              <div
+                id="catalogo-dropdown"
+                class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg border hidden z-50"
+                role="menu"
+              >
+                <div class="py-1">
+                  <a
+                    href="hombre.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors"
+                    role="menuitem"
+                  >
+                    Hombre
+                  </a>
+                  <a
+                    href="mujer.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors"
+                    role="menuitem"
+                  >
+                    Mujer
+                  </a>
+                  <a
+                    href="catalogo.html"
+                    class="block px-4 py-2 text-sm text-blue-600 font-medium hover:bg-gray-100 transition-colors border-t"
+                    role="menuitem"
+                  >
+                    Ver Todo
+                  </a>
+                </div>
+              </div>
             </li>
             <li role="none">
               <a
@@ -106,13 +141,41 @@
                       </a>
                     </li>
                     <li role="none">
-                      <a
-                        href="catalogo.html"
-                        class="block px-4 py-2 text-blue-600 font-medium hover:bg-gray-50 transition-colors"
+                      <button
+                        id="mobile-catalogo-dropdown-button"
+                        class="w-full text-left block px-4 py-2 text-blue-600 font-medium hover:bg-gray-50 transition-colors flex items-center justify-between"
                         role="menuitem"
+                        aria-expanded="false"
                       >
                         Catálogo
-                      </a>
+                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                      </button>
+                      <!-- Mobile Dropdown -->
+                      <div id="mobile-catalogo-dropdown" class="hidden bg-gray-50">
+                        <a
+                          href="hombre.html"
+                          class="block px-8 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                          role="menuitem"
+                        >
+                          Hombre
+                        </a>
+                        <a
+                          href="mujer.html"
+                          class="block px-8 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                          role="menuitem"
+                        >
+                          Mujer
+                        </a>
+                        <a
+                          href="catalogo.html"
+                          class="block px-8 py-2 text-sm text-blue-600 font-medium hover:bg-gray-100 transition-colors"
+                          role="menuitem"
+                        >
+                          Ver Todo
+                        </a>
+                      </div>
                     </li>
                     <li role="none">
                       <a
@@ -333,6 +396,9 @@
 
     <!-- Shopping Cart JavaScript -->
     <script src="../assets/js/carrito.js"></script>
+    <!-- Navigation Component -->
+    <script src="../assets/js/navigation.js"></script>
+    <!-- Main App -->
     <script src="../assets/js/app.js"></script>
   </body>
 </html>

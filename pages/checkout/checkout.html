@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
     <title>Tienda - Checkout</title>
   </head>
   <body class="bg-gray-50 text-gray-900 min-h-screen flex flex-col">
@@ -15,7 +16,7 @@
           <div class="flex items-center">
             <h1 class="text-2xl font-bold text-blue-600">
               <a
-                href="../index.html"
+                href="../../index.html"
                 class="hover:text-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded"
               >
                 Gymnastic
@@ -64,25 +65,69 @@
             </li>
           </ul>
 
-          <!-- Mobile Menu Button -->
-          <button
-            class="md:hidden p-2 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-            aria-label="Abrir menú de navegación"
-          >
-            <svg
-              class="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              ></path>
-            </svg>
-          </button>
+           <!-- Mobile Menu Button -->
+           <button
+           id="mobile-menu-button"
+           class="md:hidden p-2 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+           aria-label="Abrir menú de navegación"
+         >
+           <svg
+             class="w-6 h-6"
+             fill="none"
+             stroke="currentColor"
+             viewBox="0 0 24 24"
+           >
+             <path
+               stroke-linecap="round"
+               stroke-linejoin="round"
+               stroke-width="2"
+               d="M4 6h16M4 12h16M4 18h16"
+             ></path>
+           </svg>
+         </button>
+       </nav>
+
+       <!-- Mobile Menu (inicialmente oculto) -->
+       <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+         <ul class="py-2 space-y-1" role="menu">
+            <li role="none">
+              <a
+                href="../../index.html"
+                class="block px-4 py-2 text-gray-700 hover:bg-gray-50 transition-colors"
+                role="menuitem"
+              >
+                Inicio
+              </a>
+            </li>
+            <li role="none">
+              <a
+                href="../catalogo.html"
+                class="block px-4 py-2 text-gray-700 hover:bg-gray-50 transition-colors"
+                role="menuitem"
+              >
+                Catálogo
+              </a>
+            </li>
+            <li role="none">
+              <a
+                href="../carrito.html"
+                class="block px-4 py-2 text-gray-700 hover:bg-gray-50 transition-colors"
+                role="menuitem"
+              >
+                Carrito <span id="mobile-cart-counter" class="bg-gray-300 text-gray-600 rounded-full px-2 py-1 text-xs ml-2">0</span>
+              </a>
+            </li>
+            <li role="none">
+              <a
+                href="checkout.html"
+                class="block px-4 py-2 text-blue-600 font-medium hover:bg-gray-50 transition-colors"
+                role="menuitem"
+              >
+                Checkout
+              </a>
+            </li>
+         </ul>
+       </div>
         </nav>
       </div>
     </header>
@@ -131,7 +176,7 @@
             <ul class="space-y-2 text-sm">
               <li>
                 <a
-                  href="../index.html"
+                  href="../../index.html"
                   class="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline"
                 >
                   Inicio
@@ -139,7 +184,7 @@
               </li>
               <li>
                 <a
-                  href="catalogo.html"
+                  href="../catalogo.html"
                   class="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline"
                 >
                   Catálogo
@@ -147,7 +192,7 @@
               </li>
               <li>
                 <a
-                  href="carrito.html"
+                  href="../carrito.html"
                   class="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline"
                 >
                   Carrito
@@ -192,7 +237,7 @@
     </footer>
 
     <!-- Shopping Cart JavaScript -->
-    <script src="../assets/js/carrito.js"></script>
-    <script src="../assets/js/app.js"></script>
+    <script src="../../assets/js/carrito.js"></script>
+    <script src="../../assets/js/app.js"></script>
   </body>
 </html>

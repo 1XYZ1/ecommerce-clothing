@@ -37,7 +37,7 @@
       "stock": 20,
       "genero": "unisex",
       "categoria": "sudaderas",
-      "imagen": "assets/img/sudadera-capucha.jpg",
+      "imagen": "assets/img/sudadera-capucha.webp",
       "tallas": ["S", "M", "L", "XL", "XXL"],
       "colores": ["gris", "negro", "azul marino"],
       "destacado": true
@@ -51,7 +51,7 @@
       "stock": 12,
       "genero": "hombre",
       "categoria": "calzado",
-      "imagen": "assets/img/zapatillas-deportivas-hombre.jpg",
+      "imagen": "assets/img/zapatillas-deportivas-hombre.avif",
       "tallas": ["40", "41", "42", "43", "44", "45"],
       "colores": ["negro", "blanco", "azul"],
       "destacado": false
@@ -65,7 +65,7 @@
       "stock": 8,
       "genero": "unisex",
       "categoria": "chaquetas",
-      "imagen": "assets/img/chaqueta-denim.jpg",
+      "imagen": "assets/img/chaqueta-denim.webp",
       "tallas": ["S", "M", "L", "XL"],
       "colores": ["azul clásico", "negro", "gris claro"],
       "destacado": false
@@ -79,7 +79,7 @@
       "stock": 18,
       "genero": "mujer",
       "categoria": "vestidos",
-      "imagen": "assets/img/vestido-casual.jpg",
+      "imagen": "assets/img/vestido-casual.webp",
       "tallas": ["XS", "S", "M", "L", "XL"],
       "colores": ["floral", "negro", "azul marino"],
       "destacado": false
@@ -93,7 +93,7 @@
       "stock": 30,
       "genero": "mujer",
       "categoria": "deportiva",
-      "imagen": "assets/img/leggings-deportivos-mujer.jpg",
+      "imagen": "assets/img/leggings-deportivos-mujer.webp",
       "tallas": ["XS", "S", "M", "L", "XL"],
       "colores": ["negro", "gris", "rosa"],
       "destacado": true
@@ -121,7 +121,7 @@
       "stock": 25,
       "genero": "mujer",
       "categoria": "deportiva",
-      "imagen": "assets/img/top-deportivo-mujer.jpg",
+      "imagen": "assets/img/top-deportivo-mujer.webp",
       "tallas": ["XS", "S", "M", "L", "XL"],
       "colores": ["negro", "rosa", "púrpura"],
       "destacado": false
@@ -163,7 +163,7 @@
       "stock": 10,
       "genero": "hombre",
       "categoria": "chaquetas",
-      "imagen": "assets/img/chaqueta-cortavientos-hombre.jpg",
+      "imagen": "assets/img/chaqueta-cortavientos-hombre.webp",
       "tallas": ["M", "L", "XL", "XXL"],
       "colores": ["negro", "azul", "verde"],
       "destacado": false
@@ -177,7 +177,7 @@
       "stock": 20,
       "genero": "mujer",
       "categoria": "deportiva",
-      "imagen": "assets/img/mallas-yoga-mujer.jpg",
+      "imagen": "assets/img/mallas-yoga-mujer.avif",
       "tallas": ["XS", "S", "M", "L", "XL"],
       "colores": ["negro", "gris", "azul"],
       "destacado": false
@@ -191,7 +191,7 @@
       "stock": 16,
       "genero": "hombre",
       "categoria": "deportiva",
-      "imagen": "assets/img/polo-deportivo-hombre.jpg",
+      "imagen": "assets/img/polo-deportivo-hombre.webp",
       "tallas": ["S", "M", "L", "XL", "XXL"],
       "colores": ["blanco", "azul marino", "negro"],
       "destacado": false

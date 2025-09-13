@@ -8,6 +8,23 @@
 // FUNCIÓN PRINCIPAL
 // ========================================
 
+// ========================================
+// NAVEGACIÓN
+// ========================================
+
+/**
+ * NOTA: La lógica de navegación se ha movido a navigation.js
+ * Este componente se encarga automáticamente de:
+ * - Menú móvil
+ * - Dropdowns de catálogo
+ * - Estados activos
+ * - Eventos globales
+ */
+
+// ========================================
+// FUNCIÓN PRINCIPAL ACTUALIZADA
+// ========================================
+
 /**
  * FUNCIÓN: Inicializar la aplicación
  * ¿Qué hace? Configura los botones para que funcionen con localStorage
@@ -17,7 +34,11 @@ function iniciarTienda() {
 
   // Configurar botones de agregar al carrito
   prepararBotones();
+
+  // La navegación se inicializa automáticamente via navigation.js
 }
+
+
 
 // ========================================
 // MANEJO DE BOTONES
@@ -30,7 +51,7 @@ function iniciarTienda() {
 function prepararBotones() {
   var botones = document.querySelectorAll("[data-product-id]");
 
-  console.log("🔘 Encontré", botones.length, "botones");
+
 
   // Para cada botón, le asignamos la función
   for (var i = 0; i < botones.length; i++) {
@@ -49,7 +70,7 @@ function asignarFuncionAlBoton(boton) {
     // Obtenemos el ID del producto
     var idProducto = this.getAttribute("data-product-id");
 
-    console.log("👆 Click en producto:", idProducto);
+
 
     // Agregamos al carrito (actualiza localStorage)
     agregarProducto(idProducto);

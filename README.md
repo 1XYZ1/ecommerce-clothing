@@ -19,13 +19,17 @@ ecommerce-clothing/
 ├── pages/
 │   ├── catalogo.html      # Catálogo completo de productos
 │   ├── carrito.html       # Página del carrito de compras
-│   ├── checkout.html      # Proceso de finalización de compra
-│   └── producto.html      # Vista detallada de producto individual
+│   ├── hombre.html        # Catálogo filtrado para hombres
+│   ├── mujer.html         # Catálogo filtrado para mujeres
+│   ├── producto.html      # Vista detallada de producto individual
+│   └── checkout/
+│       └── checkout.html  # Proceso de finalización de compra
 ├── assets/
-│   ├── css/               # Archivos de estilos (si los hay)
+│   ├── css/               # Archivos de estilos personalizados
 │   ├── img/               # Imágenes de productos y recursos
 │   └── js/
 │       ├── app.js         # Lógica principal de la aplicación
+│       ├── navigation.js  # Componente modular de navegación
 │       └── carrito.js     # Funcionalidad del carrito de compras
 ├── data/
 │   └── productos.json     # Base de datos de productos en JSON
@@ -45,10 +49,15 @@ ecommerce-clothing/
 ### JavaScript
 
 - **`assets/js/app.js`**:
-
   - Inicialización de la aplicación
   - Manejo de eventos de botones
   - Integración con el sistema de carrito
+
+- **`assets/js/navigation.js`**:
+  - Componente modular de navegación
+  - Gestión de menús móviles y dropdowns
+  - Estados activos y eventos globales
+  - Auto-inicialización y API pública
 
 - **`assets/js/carrito.js`**:
   - Funciones de gestión del carrito (agregar, quitar, actualizar)
@@ -121,6 +130,44 @@ ecommerce-clothing/
 - **Mobile First**: Optimizado para dispositivos móviles
 - **Breakpoints**: Adaptación automática a tablets y desktop
 - **Componentes**: Cards de productos, navegación hamburguesa, grids adaptativos
+
+## 🧭 Componente de Navegación
+
+### NavigationComponent (`assets/js/navigation.js`)
+
+El componente de navegación es un módulo JavaScript independiente que maneja toda la funcionalidad de navegación del sitio:
+
+#### Características:
+- **Auto-inicialización**: Se inicializa automáticamente cuando el DOM está listo
+- **Modular**: Encapsula toda la lógica de navegación en una clase reutilizable
+- **Responsive**: Maneja tanto navegación desktop como móvil
+- **Accesible**: Incluye atributos ARIA y soporte para teclado
+
+#### Funcionalidades:
+- ✅ **Menú móvil**: Toggle del menú hamburguesa
+- ✅ **Dropdowns de catálogo**: Menús desplegables para Hombre/Mujer/Ver Todo
+- ✅ **Estados activos**: Resaltado de página actual
+- ✅ **Eventos globales**: Click fuera para cerrar, tecla Escape
+- ✅ **Animaciones**: Rotación de flechas y transiciones suaves
+
+#### API Pública:
+```javascript
+// Instancia global disponible
+window.navigationInstance
+
+// Métodos disponibles
+navigationInstance.init()           // Inicializar manualmente
+navigationInstance.destroy()        // Limpiar eventos y referencias
+navigationInstance.getState()       // Obtener estado actual
+navigationInstance.hideAllMenus()   // Cerrar todos los menús
+```
+
+#### Uso en HTML:
+```html
+<!-- El componente se incluye antes de app.js -->
+<script src="assets/js/navigation.js"></script>
+<script src="assets/js/app.js"></script>
+```
 
 ## 🛠️ Desarrollo y Personalización
 

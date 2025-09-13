@@ -7,96 +7,37 @@
     <title>Tienda - Checkout</title>
   </head>
   <body class="bg-gray-50 text-gray-900 min-h-screen flex flex-col">
-    <!-- HEADER SECTION -->
+    <!-- Header -->
     <header class="bg-white shadow-sm border-b sticky top-0 z-50">
       <div class="container mx-auto px-4">
         <nav class="flex items-center justify-between py-4">
-          <!-- Logo/Brand -->
           <div class="flex items-center">
             <h1 class="text-2xl font-bold text-blue-600">
-              <a
-                href="../index.html"
-                class="hover:text-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded"
-              >
-                MiTienda
-              </a>
+              <a href="../../index.html" class="hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded">MiTienda</a>
             </h1>
           </div>
-
-          <!-- Navigation Menu -->
-          <ul class="hidden md:flex items-center space-x-8" role="menubar">
-            <li role="none">
-              <a
-                href="../../index.html"
-                class="text-gray-700 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded px-2 py-1"
-                role="menuitem"
-              >
-                Inicio
-              </a>
-            </li>
-            <li role="none">
-              <a
-                href="../catalogo.html"
-                class="text-gray-700 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded px-2 py-1"
-                role="menuitem"
-              >
-                Catálogo
-              </a>
-            </li>
-            <li role="none">
-              <a
-                href="../carrito.html"
-                class="text-gray-700 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded px-2 py-1"
-                role="menuitem"
-              >
-                Carrito
-              </a>
-            </li>
-            <li role="none">
-              <a
-                href="checkout.html"
-                class="text-blue-600 font-medium hover:text-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded px-2 py-1"
-                role="menuitem"
-                aria-current="page"
-              >
-                Checkout
-              </a>
-            </li>
+          <ul class="hidden md:flex items-center space-x-8">
+            <li><a href="../../index.html" class="text-gray-700 hover:text-blue-600 px-2 py-1 rounded">Inicio</a></li>
+            <li><a href="../catalogo.html" class="text-gray-700 hover:text-blue-600 px-2 py-1 rounded">Catálogo</a></li>
+            <li><a href="../carrito.html" class="text-gray-700 hover:text-blue-600 px-2 py-1 rounded">Carrito</a></li>
+            <li><a href="checkout.html" class="text-blue-600 font-medium px-2 py-1 rounded" aria-current="page">Checkout</a></li>
           </ul>
-
-          <!-- Mobile Menu Button -->
-          <button
-            class="md:hidden p-2 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-            aria-label="Abrir menú de navegación"
-          >
-            <svg
-              class="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              ></path>
-            </svg>
+          <button class="md:hidden p-2 rounded-lg hover:bg-gray-100" aria-label="Abrir menú de navegación">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
           </button>
         </nav>
       </div>
     </header>
 
-    <!-- MAIN CONTENT -->
+    <!-- Main -->
     <main class="container mx-auto px-4 py-8 flex-1">
       <div class="mb-8">
-        <h2 class="text-3xl font-bold text-gray-900 mb-4">Finalizar Compra</h2>
-        <p class="text-lg text-gray-600">Completa tu pedido de forma segura</p>
+        <h2 class="text-3xl font-bold text-gray-900 mb-2">Finalizar Compra</h2>
+        <p class="text-lg text-gray-600">Completa tus datos para confirmar el pedido</p>
       </div>
 
-      <!-- Layout: 2 columnas desktop / 1 columna mobile -->
       <div class="grid grid-cols-1 lg:grid-cols-5 gap-6">
-        <!-- Formularios (60%) -->
+        <!-- Formularios -->
         <section class="lg:col-span-3 space-y-6">
           <!-- Datos personales -->
           <div class="bg-white rounded-lg shadow-sm border p-6">
@@ -104,41 +45,24 @@
             <form id="form-personales" class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label for="nombre" class="block text-sm font-medium mb-1">Nombre *</label>
-                <input
-                  id="nombre"
-                  required
-                  placeholder="Ej: Juan"
-                  class="w-full rounded-lg border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
+                <input id="nombre" type="text" maxlength="50" required placeholder="Ej: Juan"
+                  class="w-full rounded-lg border border-gray-300 p-3 focus:ring-2 focus:ring-blue-500">
               </div>
               <div>
                 <label for="apellidos" class="block text-sm font-medium mb-1">Apellidos *</label>
-                <input
-                  id="apellidos"
-                  required
-                  placeholder="Ej: Pérez Gómez"
-                  class="w-full rounded-lg border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
+                <input id="apellidos" type="text" maxlength="60" required placeholder="Ej: Pérez Gómez"
+                  class="w-full rounded-lg border border-gray-300 p-3 focus:ring-2 focus:ring-blue-500">
               </div>
               <div>
                 <label for="email" class="block text-sm font-medium mb-1">Email *</label>
-                <input
-                  id="email"
-                  type="email"
-                  required
-                  placeholder="tucorreo@dominio.com"
-                  class="w-full rounded-lg border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
+                <input id="email" type="email" maxlength="100" required placeholder="tucorreo@dominio.com"
+                  class="w-full rounded-lg border border-gray-300 p-3 focus:ring-2 focus:ring-blue-500">
               </div>
               <div>
                 <label for="telefono" class="block text-sm font-medium mb-1">Teléfono *</label>
-                <input
-                  id="telefono"
-                  type="tel"
-                  required
-                  placeholder="+34 600 000 000"
-                  class="w-full rounded-lg border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
+                <!-- pattern + js: solo dígitos -->
+                <input id="telefono" type="text" pattern="\d+" maxlength="15" required placeholder="Ej: 600000000"
+                  class="w-full rounded-lg border border-gray-300 p-3 focus:ring-2 focus:ring-blue-500">
               </div>
             </form>
           </div>
@@ -149,38 +73,24 @@
             <form id="form-envio" class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div class="md:col-span-2">
                 <label for="direccion" class="block text-sm font-medium mb-1">Dirección *</label>
-                <input
-                  id="direccion"
-                  required
-                  placeholder="Calle, número, piso"
-                  class="w-full rounded-lg border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
+                <input id="direccion" type="text" maxlength="100" required placeholder="Calle, número, piso"
+                  class="w-full rounded-lg border border-gray-300 p-3 focus:ring-2 focus:ring-blue-500">
               </div>
               <div>
                 <label for="ciudad" class="block text-sm font-medium mb-1">Ciudad *</label>
-                <input
-                  id="ciudad"
-                  required
-                  placeholder="Ej: Madrid"
-                  class="w-full rounded-lg border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
+                <input id="ciudad" type="text" maxlength="50" required placeholder="Ej: Madrid"
+                  class="w-full rounded-lg border border-gray-300 p-3 focus:ring-2 focus:ring-blue-500">
               </div>
               <div>
                 <label for="cp" class="block text-sm font-medium mb-1">Código Postal *</label>
-                <input
-                  id="cp"
-                  required
-                  placeholder="Ej: 28001"
-                  class="w-full rounded-lg border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
+                <!-- pattern + js: solo dígitos -->
+                <input id="cp" type="text" pattern="\d+" maxlength="10" required placeholder="Ej: 28001"
+                  class="w-full rounded-lg border border-gray-300 p-3 focus:ring-2 focus:ring-blue-500">
               </div>
               <div class="md:col-span-2">
                 <label for="pais" class="block text-sm font-medium mb-1">País *</label>
-                <select
-                  id="pais"
-                  required
-                  class="w-full rounded-lg border border-gray-300 p-3 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-                >
+                <select id="pais" required
+                  class="w-full rounded-lg border border-gray-300 p-3 bg-white focus:ring-2 focus:ring-blue-500">
                   <option value="España" selected>España</option>
                   <option>Portugal</option>
                   <option>Francia</option>
@@ -189,7 +99,7 @@
                 </select>
               </div>
               <div class="md:col-span-2 flex items-center gap-2">
-                <input id="guardarDir" type="checkbox" class="w-4 h-4" />
+                <input id="guardarDir" type="checkbox" class="w-4 h-4">
                 <label for="guardarDir" class="text-sm">Guardar dirección para futuras compras</label>
               </div>
             </form>
@@ -200,146 +110,86 @@
             <h3 class="text-xl font-semibold text-gray-800 mb-4">Pago</h3>
             <div class="mb-4">
               <label class="inline-flex items-center gap-2">
-                <input type="radio" name="metodoPago" value="tarjeta" checked class="w-4 h-4" />
+                <input type="radio" name="metodoPago" value="tarjeta" checked class="w-4 h-4">
                 <span>Pago con Tarjeta de Crédito</span>
               </label>
             </div>
             <form id="form-pago" class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div class="md:col-span-2">
                 <label for="numeroTarjeta" class="block text-sm font-medium mb-1">Número de tarjeta *</label>
-                <input
-                  id="numeroTarjeta"
-                  required
-                  placeholder="1234 5678 9012 3456"
-                  class="w-full rounded-lg border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
+                <!-- pattern + js: solo dígitos (máx 16) -->
+                <input id="numeroTarjeta" type="text" pattern="\d*" maxlength="16" required placeholder="1234567890123456"
+                  class="w-full rounded-lg border border-gray-300 p-3 focus:ring-2 focus:ring-blue-500">
               </div>
               <div class="md:col-span-2">
                 <label for="titular" class="block text-sm font-medium mb-1">Nombre del titular *</label>
-                <input
-                  id="titular"
-                  required
-                  placeholder="Como aparece en la tarjeta"
-                  class="w-full rounded-lg border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
+                <input id="titular" type="text" maxlength="60" required placeholder="Como aparece en la tarjeta"
+                  class="w-full rounded-lg border border-gray-300 p-3 focus:ring-2 focus:ring-blue-500">
               </div>
               <div>
                 <label for="fecha" class="block text-sm font-medium mb-1">Fecha (MM/AA) *</label>
-                <input
-                  id="fecha"
-                  required
-                  placeholder="MM/AA"
-                  class="w-full rounded-lg border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
+                <!-- pattern + js: inserta / automáticamente -->
+                <input id="fecha" type="text" pattern="\d{2}/\d{2}" maxlength="5" required placeholder="MM/AA"
+                  class="w-full rounded-lg border border-gray-300 p-3 focus:ring-2 focus:ring-blue-500">
               </div>
               <div>
                 <label for="cvv" class="block text-sm font-medium mb-1">CVV *</label>
-                <input
-                  id="cvv"
-                  required
-                  placeholder="Ej: 123"
-                  class="w-full rounded-lg border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
+                <!-- pattern + js: solo dígitos (3-4) -->
+                <input id="cvv" type="text" pattern="\d*" maxlength="4" required placeholder="123"
+                  class="w-full rounded-lg border border-gray-300 p-3 focus:ring-2 focus:ring-blue-500">
               </div>
             </form>
           </div>
 
           <!-- Acciones -->
           <div class="flex gap-3">
-            <a
-              href="../carrito.html"
-              class="px-5 py-3 rounded-lg border border-gray-300 hover:bg-gray-100 text-gray-700"
-            >
-              Editar carrito
-            </a>
-            <button
-               id="btn-finalizar"
-               type="button"
-               class="px-6 py-3 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 min-h-[44px]">
-               Finalizar compra
+            <a href="../carrito.html" class="px-5 py-3 rounded-lg border border-gray-300 hover:bg-gray-100 text-gray-700">Editar carrito</a>
+            <button id="btn-finalizar" type="button"
+              class="px-6 py-3 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 min-h-[44px]">
+              Finalizar compra
             </button>
-
           </div>
         </section>
 
-        <!-- Resumen (40%) -->
+        <!-- Resumen -->
         <aside class="lg:col-span-2">
-          <div class="bg-white rounded-lg shadow-sm border p-6 sticky top-6">
+          <div class="bg-white rounded-lg shadow-sm border p-6
+                      lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:overflow-auto">
             <h3 class="text-xl font-semibold text-gray-800 mb-4">Resumen de pedido</h3>
             <div id="resumen-items" class="space-y-3"></div>
             <div class="border-t mt-4 pt-4 space-y-2 text-sm">
-              <div class="flex justify-between">
-                <span>Subtotal</span>
-                <span id="subtotal">€0,00</span>
-              </div>
-              <div class="flex justify-between">
-                <span>Envío</span>
-                <span id="envio">€0,00</span>
-              </div>
-              <div class="flex justify-between font-semibold text-lg">
-                <span>Total</span>
-                <span id="total">€0,00</span>
-              </div>
+              <div class="flex justify-between"><span>Subtotal</span><span id="subtotal">€0,00</span></div>
+              <div class="flex justify-between"><span>Envío</span><span id="envio">€0,00</span></div>
+              <div class="flex justify-between font-semibold text-lg"><span>Total</span><span id="total">€0,00</span></div>
             </div>
           </div>
         </aside>
       </div>
     </main>
 
-    <!-- FOOTER SECTION -->
+    <!-- Footer -->
     <footer class="bg-gray-800 text-white mt-auto">
       <div class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- Company Info -->
           <div>
             <h3 class="text-lg font-semibold mb-4">MiTienda</h3>
-            <p class="text-sm text-gray-300 mb-4">
-              Tu tienda de confianza para ropa y accesorios de calidad.
-            </p>
+            <p class="text-sm text-gray-300 mb-4">Tu tienda de confianza para ropa y accesorios.</p>
             <p class="text-sm text-gray-300">© 2024 MiTienda. Todos los derechos reservados.</p>
           </div>
-
-          <!-- Quick Links -->
           <div>
-            <h4 class="text-lg font-semibold mb-4">Enlaces Rápidos</h4>
+            <h4 class="text-lg font-semibold mb-4">Enlaces rápidos</h4>
             <ul class="space-y-2 text-sm">
-              <li>
-                <a href="../index.html" class="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline">
-                  Inicio
-                </a>
-              </li>
-              <li>
-                <a href="catalogo.html" class="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline">
-                  Catálogo
-                </a>
-              </li>
-              <li>
-                <a href="carrito.html" class="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline">
-                  Carrito
-                </a>
-              </li>
-              <li>
-                <a href="checkout.html" class="text-gray-300 hover:text-white transition-colors focus:outline-none focus:underline">
-                  Checkout
-                </a>
-              </li>
+              <li><a href="../../index.html" class="text-gray-300 hover:text-white">Inicio</a></li>
+              <li><a href="catalogo.html" class="text-gray-300 hover:text-white">Catálogo</a></li>
+              <li><a href="carrito.html" class="text-gray-300 hover:text-white">Carrito</a></li>
+              <li><a href="checkout.html" class="text-gray-300 hover:text-white">Checkout</a></li>
             </ul>
           </div>
-
-          <!-- Contact Info -->
           <div>
             <h4 class="text-lg font-semibold mb-4">Contacto</h4>
             <ul class="space-y-2 text-sm text-gray-300">
-              <li>
-                <a href="mailto:info@mitienda.com" class="hover:text-white transition-colors focus:outline-none focus:underline">
-                  info@mitienda.com
-                </a>
-              </li>
-              <li>
-                <a href="tel:+34123456789" class="hover:text-white transition-colors focus:outline-none focus:underline">
-                  +34 123 456 789
-                </a>
-              </li>
+              <li><a href="mailto:info@mitienda.com" class="hover:text-white">info@mitienda.com</a></li>
+              <li><a href="tel:+34123456789" class="hover:text-white">+34 123 456 789</a></li>
               <li>Horario: Lun-Vie 9:00-18:00</li>
             </ul>
           </div>
@@ -347,9 +197,9 @@
       </div>
     </footer>
 
-    <!-- JS -->
-    <script src="../assets/js/carrito.js"></script>
-    <script src="../assets/js/app.js"></script>
-    <script src="../assets/js/checkout.js"></script>
+    <!-- JS (rutas CORRECTAS: 2 niveles arriba) -->
+    <script src="../../assets/js/carrito.js"></script>
+    <script src="../../assets/js/app.js"></script>
+    <script src="../../assets/js/checkout.js"></script>
   </body>
 </html>

@@ -8,13 +8,23 @@
   </head>
   <body class="bg-gray-50 text-gray-900 min-h-screen flex flex-col">
     <main class="container mx-auto px-4 py-10 flex-1">
-      <div class="bg-white rounded-lg shadow-sm border p-8">
-        <h1 id="titulo" class="text-2xl font-bold mb-2">¡Pedido confirmado!</h1>
-        <p id="sub" class="text-gray-600 mb-6"></p>
+      <div class="bg-white rounded-lg shadow-sm border p-8 text-center">
+        <h1 class="text-2xl font-bold mb-2">¡Gracias por tu compra!</h1>
+        <p class="text-gray-600 mb-6">Tu pedido se ha confirmado correctamente.</p>
 
-        <div id="resumen" class="space-y-3"></div>
+        <div class="max-w-md mx-auto text-left space-y-3">
+          <div class="flex justify-between text-sm">
+            <span class="text-gray-500">N.º de pedido:</span>
+            <span id="order" class="font-semibold">—</span>
+          </div>
+          <div class="flex justify-between text-sm">
+            <span class="text-gray-500">Tiempo estimado:</span>
+            <span id="eta" class="font-medium">—</span>
+          </div>
+          <p class="text-sm text-gray-500">Te enviaremos actualizaciones al correo registrado.</p>
+        </div>
 
-        <div class="border-t mt-6 pt-6 flex flex-wrap gap-3">
+        <div class="mt-8 flex flex-wrap gap-3 justify-center">
           <a href="../../index.html" class="px-5 py-3 rounded-lg border border-gray-300 hover:bg-gray-100">Volver al inicio</a>
           <a href="../catalogo.html" class="px-6 py-3 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700">Seguir comprando</a>
         </div>
@@ -22,87 +32,20 @@
     </main>
 
     <script>
+      // lee los parámetros de la url y los muestra en pantalla
       (function () {
-        const money = (n) =>
-          new Intl.NumberFormat("es-ES", { style: "currency", currency: "EUR" }).format(n);
-
         const params = new URLSearchParams(window.location.search);
-        const orderParam = params.get("order");
+        const order = params.get("order") || "ORD-0000000000000";
+        const eta = params.get("eta") || "4";
+        document.getElementById("order").textContent = order;
+        // mostramos días, y si pasa de 10 decimos "semanas"
+      if (eta >= 10) {
+        const semanas = Math.round(eta / 7);
+        document.getElementById("eta").textContent = "aprox. " + semanas + " semana" + (semanas > 1 ? "s" : "");
+      } else {
+        document.getElementById("eta").textContent = "aprox. " + eta + " día" + (eta > 1 ? "s" : "");
+      }
 
-        let pedido = null;
-        try {
-          pedido = JSON.parse(sessionStorage.getItem("lastOrder"));
-        } catch (e) {}
-
-        const titulo = document.getElementById("titulo");
-        const sub = document.getElementById("sub");
-        const cont = document.getElementById("resumen");
-
-        if (!pedido) {
-          titulo.textContent = "Gracias por tu compra";
-          sub.textContent = "No se encontró información del pedido.";
-          return;
-        }
-
-        titulo.textContent = "¡Gracias por tu compra!";
-        sub.innerHTML =
-          'Número de pedido: <span class="font-semibold">' +
-          (pedido.orderId || orderParam || "") +
-          "</span>";
-
-        const itemsHTML = (pedido.items || [])
-          .map(function (it) {
-            return (
-              '<div class="flex items-center justify-between">' +
-              '<div class="text-sm text-gray-700">Producto #' +
-              it.id +
-              "</div>" +
-              '<div class="text-sm text-gray-500">Cant: ' +
-              (it.cantidad || 1) +
-              "</div>" +
-              "</div>"
-            );
-          })
-          .join("");
-
-        const subtotal = (pedido.totales && pedido.totales.subtotal) || 0;
-        const envio = (pedido.totales && pedido.totales.envio) || 0;
-        const total = (pedido.totales && pedido.totales.total) || subtotal + envio;
-
-        cont.innerHTML =
-          '<h2 class="text-lg font-semibold mb-2">Resumen de la compra</h2>' +
-          '<div class="space-y-2">' +
-          itemsHTML +
-          "</div>" +
-          '<div class="border-t mt-4 pt-4 space-y-1 text-sm">' +
-          '<div class="flex justify-between"><span>Subtotal</span><span>' +
-          money(subtotal) +
-          "</span></div>" +
-          '<div class="flex justify-between"><span>Envío</span><span>' +
-          (envio === 0 ? "Gratis" : money(envio)) +
-          "</span></div>" +
-          '<div class="flex justify-between font-semibold text-lg"><span>Total</span><span>' +
-          money(total) +
-          "</span></div>" +
-          "</div>" +
-          '<div class="mt-4 text-sm text-gray-600">' +
-          "<p><span class=\"font-medium\">Envío a:</span> " +
-          (pedido.envio && pedido.envio.direccion) +
-          ", " +
-          (pedido.envio && pedido.envio.ciudad) +
-          ", " +
-          (pedido.envio && pedido.envio.cp) +
-          ", " +
-          (pedido.envio && pedido.envio.pais) +
-          "</p>" +
-          "<p><span class=\"font-medium\">Contacto:</span> " +
-          (pedido.datosPersonales && pedido.datosPersonales.nombre) +
-          " " +
-          (pedido.datosPersonales && pedido.datosPersonales.apellidos) +
-          " — " +
-          (pedido.datosPersonales && pedido.datosPersonales.email) +
-          "</p>" +
-          "</div>";
       })();
     </script>
   </body>
